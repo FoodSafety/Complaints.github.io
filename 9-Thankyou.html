@@ -93,6 +93,14 @@
   }
 </script>    
 
+
+<!--Note for Start Survey button-->
+<script>
+  function startSurvey() {
+      alert("Selecting this start survey button will take you to an form for feedback your experience with this service'")
+   
+  }
+</script>  
 </head>
 
 <body data-qg-accessibility="true">
@@ -244,7 +252,8 @@
         <h2>Tell us about your experience</h2>
         <p>Your feedback is important to us in improving this service. Please complete a short survey to give us feedback on your experience today.
         </p>
-        <button class="qg-btn btn-secondary" href="#">Start survey</button>
+         <button id="Survey" class="qg-btn btn-secondary" onclick="startSurvey()">Start survey</button>
+        
 
         <!-- Page dates-->  
         <div class="qg-content-footer">
