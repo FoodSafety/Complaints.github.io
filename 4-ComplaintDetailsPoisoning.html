@@ -71,7 +71,6 @@
     $('#FoodPoisoningDetails').hide();
     $('#MedicalAdvice').hide();
     $('#MedicalAdviceSamples').hide();
-    $('#MedicalAdviceSamplesInformation').hide();
     $('#FoodConsumed').hide();
     $('#HasFoodSamples').hide();
     $('#FoodSamplesInformation').hide();
@@ -109,31 +108,13 @@
         //alert("Selected value is: " + selectedvalue);
         if (selectedvalue == "MedicalAdvice-Yes") {
           $('#MedicalAdviceSamples').show();
-          $('#MedicalAdviceSamplesInformation').hide();
         }
         else {
           $('#MedicalAdviceSamples').hide();
-          $('#MedicalAdviceSamplesInformation').hide();
         }
       });
   });
 </script> 
-<!-- Show or hide page sections based on whether medical samples were collected -->
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#MedicalAdviceSamples').click(function(){
-        var selectedvalue = $("input[name='MedicalAdviceSamples']:checked").val();
-        //alert("Selected value is: " + selectedvalue);
-        if (selectedvalue == "MedicalAdviceSamples-Yes") {
-          $('#MedicalAdviceSamplesInformation').show();
-        }
-        else {
-          $('#MedicalAdviceSamplesInformation').hide();
-        }
-      });
-  });
-</script> 
-
 
 <!--Show or hide information about how to store food samples-->
 <script type="text/javascript">
@@ -501,13 +482,6 @@ $(document).ready(function(){
                 </ul>
               </ol> 
             </fieldset>
-          </div>
-
-          <div class="form-group" id="MedicalAdviceSamplesInformation">
-            <div class="alert alert-info" role="alert">
-              <p>TO DO:  Add some text here about how we might contact you for sample collection when you select “No” from above
-              </p>
-              </div>
           </div>
 
           <div class="form-group" id="FoodConsumed">
