@@ -72,6 +72,7 @@
       $("#RetailerEnterDetails").hide();
       $("#Website").hide();
       $("#PrimaryProducer").hide();
+      $("#GovernmentFacility").hide();
       $("#RetailerContacted").hide();
       $("#RetailerResponse").hide();
   });
@@ -87,6 +88,7 @@
           $("#RetailerEnterDetails").hide();
           $("#Website").hide();
           $("#PrimaryProducer").hide();
+          $("#GovernmentFacility").hide();
           $("#RetailerContacted").hide();
           $("#RetailerResponse").hide();
           var selectedvalue = $("input[name='BusinessType']:checked").val();
@@ -102,14 +104,6 @@
             case "RetailerLocation-MarketStall":
               $("#RetailerEnterDetails").show();
               break;
-            case "RetailerLocation-Hospital":
-              $("#RetailerSearch").show();
-              $("#RetailerSearchResults").show();
-              break;
-            case "RetailerLocation-School":
-              $("#RetailerSearch").show();
-              $("#RetailerSearchResults").show();
-              break;
             case "RetailerLocation-Other":
               $("#RetailerEnterDetails").show();
               break;
@@ -120,6 +114,7 @@
               $("#RetailerEnterDetails").show();
           }
           $("#PrimaryProducer").show();
+          $("#GovernmentFacility").show();
           $("#RetailerContacted").show();
         });
     });
@@ -263,8 +258,8 @@
                         <div class="icon">
                         <i class="fas fa-store-alt fa-4x"></i>
                         </div>
-                        <label for="RetailerLocation-Store" class="radio-tile-label">Shop or restaurant</label>
-                    </div>
+                        <label for="RetailerLocation-Store" class="radio-tile-label">Shop with a fixed address</label>
+                      </div>
                 </div>
                 <div class="input-container">
                     <input id="RetailerLocation-FoodTruck" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-FoodTruck"/>
@@ -281,10 +276,9 @@
                     <div class="icon">
                         <i class="fas fa-store fa-4x"></i>
                     </div>
-                    <label for="RetailerLocation-MarketStall" class="radio-tile-label">Market stall</label>
+                    <label for="RetailerLocation-MarketStall" class="radio-tile-label">Temporary Market stall</label>
                     </div>
                 </div>
-
                  <div class="input-container">
                     <input id="RetailerLocation-Website" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-Website"/>
                     <div class="radio-tile">
@@ -294,26 +288,6 @@
                     <label for="RetailerLocation-Website" class="radio-tile-label">Online store</label>
                     </div>
                 </div>  
- 
-                <div class="input-container">
-                    <input id="RetailerLocation-Hospital" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-Hospital"/>
-                    <div class="radio-tile">
-                    <div class="icon">
-                        <i class="fas fa-hospital-alt fa-4x"></i>
-                    </div>
-                    <label for="RetailerLocation-Hospital" class="radio-tile-label">Public hospital</label>
-                    </div>
-                </div>
-                <br>
-                <div class="input-container">
-                    <input id="RetailerLocation-School" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-School"/>
-                    <div class="radio-tile">
-                    <div class="icon">
-                        <i class="fas fa-school fa-4x"></i>
-                    </div>
-                    <label for="RetailerLocation-School" class="radio-tile-label">State school</label>
-                    </div>
-                </div>
                 <br>
                 <div class="input-container">
                   <input id="RetailerLocation-Other" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-Other"/>
@@ -605,7 +579,7 @@
           <div class="form-group" id="PrimaryProducer" >
             <fieldset>
               <label>
-                <span class="lead">Is this complaint about a primary producer? </span>
+                <span class="lead">Is your complaint about a primary producer? </span>
                 <abbr title="(required)">*</abbr>
                 <p> 
                   Select yes if your complaint relates <strong>only</strong> to the production and processing of any of the following foods:
@@ -630,6 +604,30 @@
                   <li>
                     <input type="radio" name="PrimaryProducer" id="PrimaryProducer-No" value="PrimaryProducer-No" unchecked/>
                     <label for="PrimaryProducer-No">No</label>
+                  </li>
+                </ul>
+              </ol> 
+            </fieldset> 
+          </div>
+
+          <div class="form-group" id="GovernmentFacility" >
+            <fieldset>
+              <label>
+                <span class="lead">Is your complaint about food that is provided by a Queensland State Government facility? </span>
+                <abbr title="(required)">*</abbr>
+                <p> 
+                  For example: state school, public hospital, etc.
+                </p>
+              </label>
+              <ol class="questions">
+                <ul class= "choices compact">
+                  <li>
+                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-Yes" value="GovernmentFacility-Yes" unchecked/>
+                    <label for="GovernmentFacility-Yes">Yes</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-No" value="GovernmentFacility-No" unchecked/>
+                    <label for="GovernmentFacility-No">No</label>
                   </li>
                 </ul>
               </ol> 
