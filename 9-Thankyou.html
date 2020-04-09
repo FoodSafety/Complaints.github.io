@@ -61,6 +61,7 @@
 <!-- STYLESHEETS ADDED IN-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg="nest"></script>
 
 <!--SCRIPTS ADDED IN-->
 <!--Show an example of documents uploaded-->
@@ -208,52 +209,52 @@
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
         <div class="qg-correct">
-          <p>Your complaint has been successfully lodged.  Thank you for reporting your food safety complaint.</p>
+          <sp>Thank you for reporting your food safety complaint. Your complaint has been successfully lodged. A copy of the complaint details has been emailed to you. </p>
+          <p> Your reference number is <span class="lead"><strong>INV999999</strong></span>.</p>
         </div>
           
         <h2>Referral details</h2>
 
-        <p>Your complaint has been referred to:</p>
+        <p>Your complaint will be investigated by:</p>
         
         <table class="table">
           <tbody>
-            <tr>
-              <th >Reference number</th>
-              <td><span class="lead"><strong>INV999999</strong></span></td> 
-            </tr>
-            <tr>
             <tr>
               <th >Agency</th>
               <td>Mytown city council</td> 
             </tr>
             <tr>
+              <tr>
               <th >Phone</th>
               <td>(07) 9999 9999</td> 
             </tr>
             <tr>
-            <th >Fax</th>
-              <td>(07) 9999 9999</td> 
+                <th >Email</th>
+                <td><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></td> 
             </tr>
             <tr>
-              <th >Email</th>
-              <td><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></td> 
+              <th >Website</th>
+              <td><a href="#">www.mytown.com.au</a></td> 
             </tr>
-          </tbody>
+         </tbody>
         </table>
-      
+       
+        <br>
+        <p>Download a copy of your food complaint as a PDF document. 
+          Note: You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the complaint details. </p> 
+
+        <div id="DownloadDocument">
+          <button id="DownloadDocument" class="qg-btn btn-primary" onclick="downloadDocument()">Download complaint details</button>
+        </div>  
+       
+        <br>
         <h2>What's next?</h2>
-        <p>The responsible government agency may contact you:</p>
+        <p>The responsible agency may contact you:</p>
         <ul>
           <li>If further information is needed about your complaint</li>
-          <li>To arrange to collect a sample or remaining product.</li>
+          <li>To arrange to collect a sample or remaining food product.</li>
         </ul>
         <p>The outcome of any investigation may not able to be provided to you as this information remains confidential should there be any enforcement action taken against the food business.</p>
-
-        <h2>Tell us about your experience</h2>
-        <p>Your feedback is important to us in improving this service. Please complete a short survey to give us feedback on your experience today.
-        </p>
-         <button id="Survey" class="qg-btn btn-secondary" onclick="startSurvey()">Start survey</button>
-        
 
         <!-- Page dates-->  
         <div class="qg-content-footer">
@@ -267,46 +268,11 @@
   </div>
   <!--RIGHT SIDE -->
   <aside id="qg-secondary-content">
-    <div class="qg-aside" role="complementary">
-      <h2><i class="material-icons">email</i>&nbsp;Email</h2>
-        <p>Email a copy of your food complaint.</p> 
-        <form id="ThankyouEmailForm">
-          <div class="form-group" id="EmailComplaint">
-            <fieldset>
-              <label for="Emailaddress">
-                <span class="label">Email address 
-                </span>
-              </label>
-              <input class="form-control" type="email" name="EmailAddress" id="EmailAddress">
-              <br>
-              <label for="ConfirmEmailaddress">
-                <span class="label">Confirm email address 
-                </span>
-              </label>
-              <input class="form-control" type="email" name="ConfirmEmailAddress" id="ConfirmEmailAddress">
-            </fieldset>
-          </div>
-        </form> 
-        <div id="EmailDocument">
-          <button id="EmailDocument" class="qg-btn btn-primary" onclick="emailDocument()">Email complaint details</button>
-        </div>        
-        <br>
-        <p>
-          By entering an email address, you will be sent the details of your food complaint to the email provided.  
-          Depending on your email provider, personal information may be transferred outside of Australia.  
-          By providing your email address, you voluntarily agree to this transfer. 
-        </p>
-    </div>
       <div class="qg-aside" role="complementary">
-        <h2><i class="material-icons">cloud_download</i>&nbsp;Download</h2>
-          <p>Download a copy of your food complaint as a PDF document.</p> 
-          <div id="DownloadDocument">
-            <button id="DownloadDocument" class="qg-btn btn-primary" onclick="downloadDocument()">Download complaint details</button>
-          </div>
-          <br>
-          <p>
-            Note: You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the complaint details. 
+        <h2><i class="fas fa-comment-dots"></i>&nbsp;Provide feedback</h2>
+          <p>Tell us about your experience. Your feedback is important to us in improving this service. Please complete a short survey to give us feedback on your experience today.
           </p>
+           <button id="Survey" class="qg-btn btn-secondary" onclick="startSurvey()">Start survey</button>
     </div>
   </aside>  
   

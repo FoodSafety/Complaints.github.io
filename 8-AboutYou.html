@@ -61,6 +61,7 @@
 <!-- STYLESHEETS ADDED IN-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg="nest"></script>
 
 <!--JAVASCRIPT ADDED IN -->
 <!--<script>
@@ -239,14 +240,22 @@
                 </span>
               </label>
               <input class="form-control" type="tel" name="ComplainantPhoneNumber" id="ComplainantPhoneNumber" pattern = [0-9]{10} maxlength="15">
-
+              <br>
               <label for="ComplainantEmail">
                 <span class="label">Email 
                 </span>
               </label>
               <input class="form-control" type="email" name="ComplainantEmail" id="ComplainantEmail">
-
             </fieldset>
+            <br>
+            <div class="alert alert-info" role="alert">
+              <h4><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Did you know?</h4>
+              <p>
+                You will be sent the details of your food complaint to this email address.  
+                Depending on your email provider, personal information may be transferred outside of Australia.  
+                By providing your email address, you voluntarily agree to this transfer.
+              </p>
+            </div>
           </div>
         
           <div class="form-group" id="ComplainantAddress">  
