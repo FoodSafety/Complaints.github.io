@@ -75,6 +75,7 @@
       $("#GovernmentFacility").hide();
       $("#RetailerContacted").hide();
       $("#RetailerResponse").hide();
+      $("#NextButtons").hide();
   });
 </script>
 
@@ -116,6 +117,7 @@
           $("#PrimaryProducer").show();
           $("#GovernmentFacility").show();
           $("#RetailerContacted").show();
+          $("#NextButtons").show();
         });
     });
   </script> 
@@ -135,6 +137,27 @@
       });
   });
 </script> 
+
+
+<!-- Script to determine next page to display based on HasFoodSamples session value -->
+<script>
+  function nextPage() {
+   var hasFoodSamples = sessionStorage.getItem("hasFoodSamples");
+
+    
+   if(hasFoodSamples == "HasFoodSamples-Yes") {
+      // Navigate to the Manufacturer details page
+      var pageName = ("6-Manufacturer.html");
+   }
+   else {
+      // Navigate to the About you details page
+      var pageName = ("8-AboutYou.html"); 
+   }
+  
+  window.open(pageName, "_self"); 
+  }
+</script>
+
 
 </head>
 
@@ -668,12 +691,13 @@
         </form> 
 
         <!-- Page buttons -->
-        <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="6-Manufacturer.html">Next</a>&nbsp;
-        <a href="1-Home.html">Cancel</a>
-        <br>
-        <br>
-
+        <div class="form-group" id="NextButtons">
+          <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
+          <button type="button" class="qg-btn btn-primary" onclick="nextPage()">Next</button>&nbsp;
+          <a href="1-Home.html">Cancel</a>
+          <br>
+          <br>
+        </div>
          <!-- Page dates-->  
          <div class="qg-content-footer">
           <dl>

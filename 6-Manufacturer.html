@@ -66,34 +66,14 @@
 <!--Show or hide page sections on page load-->
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#KnowManufacturer').hide();
+    $('#KnowManufacturer').show();
     $('#ManufacturerDetails').hide();
     $('#ManufacturerContacted').hide();
     $('#ManufacturerResponse').hide();
+    $('#NextButtons').hide();
   });
 </script> 
 
-<!--Show or hide page sections based on whether the food is made on site-->
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#ManufacturerOnSite').click(function(){
-        var selectedvalue = $("input[name='ManufacturerOnSite']:checked").val();
-        //alert("Selected value is: " + selectedvalue);
-        if (selectedvalue == "ManufacturerOnSite-Yes") {
-          $('#KnowManufacturer').hide();
-          $('#ManufacturerDetails').hide();
-          $('#ManufacturerContacted').hide();
-          $('#ManufacturerResponse').hide();
-        }
-        else {
-          $('#KnowManufacturer').show();
-          $('#ManufacturerDetails').hide();
-          $('#ManufacturerContacted').hide();
-          $('#ManufacturerResponse').hide();
-        }
-      });
-  });
-</script> 
 
 <!--Show or hide page sections based on whether the has food manufacturer details-->
 <script type="text/javascript">
@@ -105,12 +85,14 @@
           $('#ManufacturerDetails').show();
           $('#ManufacturerContacted').show();
           $('#ManufacturerResponse').hide();
+          $('#NextButtons').show();
         }
         else {
           $('#ManufacturerDetails').hide();
           $('#ManufacturerContacted').hide();
           $('#ManufacturerResponse').hide();
-        }
+          $('#NextButtons').show();
+          }
       });
   });
 </script> 
@@ -240,37 +222,15 @@
         <p>Please tell us about the food business that manufactured the food.</p>
           
         <form id="ManufacturerForm">
-          <div class="form-group" id="ManufacturerOnSite">
+         <div class="form-group" id="KnowManufacturer">
             <fieldset>
               <label>
-                <span class="lead">Is your complaint about food that is made on site? </span>
+                <span class="lead">Do you have a food package that shows the manufacturer or importer details? </span>
                 <abbr title="(required)">*</abbr>
                 <small class="hint"> 
-                  For example: in a resturarant, café, bakery, etc..
-                </small>
-              </label>
-              <ol class="questions">
-                <ul class= "choices compact">
-                  <li>
-                    <input type="radio" name="ManufacturerOnSite" id="ManufacturerOnSite-Yes" value="ManufacturerOnSite-Yes" unchecked/>
-                    <label for="ManufacturerOnSite-Yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" name="ManufacturerOnSite" id="ManufacturerOnSite-No" value="ManufacturerOnSite-No" unchecked/>
-                    <label for="ManufacturerOnSite-No">No</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset>  
-          </div>
-
-          <div class="form-group" id="KnowManufacturer">
-            <fieldset>
-              <label>
-                <span class="lead">Do you know the food manufacturer’s details? </span>
-                <abbr title="(required)">*</abbr>
-                <small class="hint"> 
-                  For example: are they printed on a packet for the food item, either as the manufacturer or importer of the food item?
+                  For example: are the manufacturer or importer details printed on a packet?
+                  <br>
+                  Note: Food that is made on site, or made to order does not usually include manufacturer details (e.g.: food from a resturarant, takeaway store, café, bakery)
                 </small>
               </label>
               <ol class="questions">
@@ -387,12 +347,13 @@
         </form> 
 
         <!-- Page buttons -->
-        <a class="qg-btn btn-default" href="5-Retailer.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="7-Documents.html">Next</a>&nbsp;
-        <a href="1-Home.html">Cancel</a>
-        <br>
-        <br>
-
+        <div class="form-group" id="NextButtons">
+          <a class="qg-btn btn-default" href="5-Retailer.html">Previous</a>&nbsp;
+          <a class="qg-btn btn-primary" href="7-Documents.html">Next</a>&nbsp;
+          <a href="1-Home.html">Cancel</a>
+          <br>
+          <br>
+      </div>
          <!-- Page dates-->  
          <div class="qg-content-footer">
           <dl>

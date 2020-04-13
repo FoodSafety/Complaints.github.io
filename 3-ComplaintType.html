@@ -281,7 +281,9 @@
         sessionStorage.setItem("complaint_sub_type", complaintSubType);
         break;
       }
-          
+      // Save the hasFoodSamples to null value
+      sessionStorage.setItem("hasFoodSamples"," ");
+      
       var pageName = ("4-ComplaintDetails" + complaint_type + ".html");
       //alert(complaint_type + ": " + complaintSubType + "going to page: " + pageName);
       window.open(pageName, "_self");

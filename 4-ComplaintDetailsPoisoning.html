@@ -132,6 +132,20 @@ $(document).ready(function(){
 });
 </script> 
 
+<!-- Script to set HasFoodSamples session values and go to next page -->
+<script>
+  function nextPage() {
+    // Save the has food samples value
+    var hasFoodSamples = $("input[name='HasFoodSamples']:checked").val();
+    sessionStorage.setItem("hasFoodSamples", hasFoodSamples);
+    //alert("HasFoodSamples " + hasFoodSamples);
+
+    // Navigate to the retailer page
+      var pageName = "5-Retailer.html";
+      window.open(pageName, "_self");
+  }
+</script>
+
 </head>
 
 <body data-qg-accessibility="true">
@@ -591,7 +605,7 @@ $(document).ready(function(){
 
         <!-- Page buttons -->
         <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="5-Retailer.html">Next</a>&nbsp;
+        <button type="button" class="qg-btn btn-primary" onclick="nextPage()">Next</button>&nbsp;
         <a href="1-Home.html">Cancel</a>
         <br>
         <br>
