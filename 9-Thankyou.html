@@ -208,46 +208,58 @@
 
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
-        <div class="qg-correct">
-          <sp>Thank you for reporting your food safety complaint. Your complaint has been successfully lodged. A copy of the complaint details has been emailed to you. </p>
-          <p> Your reference number is <span class="lead"><strong>INV999999</strong></span>.</p>
-        </div>
-          
-        <h2>Referral details</h2>
 
-        <p>Your complaint will be investigated by:</p>
-        
-        <table class="table">
-          <tbody>
-            <tr>
-              <th >Agency</th>
-              <td>Mytown city council</td> 
-            </tr>
-            <tr>
-              <tr>
-              <th >Phone</th>
-              <td>(07) 9999 9999</td> 
-            </tr>
-            <tr>
-                <th >Email</th>
-                <td><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></td> 
-            </tr>
-            <tr>
-              <th >Website</th>
-              <td><a href="#">www.mytown.com.au</a></td> 
-            </tr>
-         </tbody>
-        </table>
-       
-        <br>
-        <p>Download a copy of your food complaint as a PDF document. 
-          Note: You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the complaint details. </p> 
+          <h1>Thank you for reporting your food safety complaint</h1>
+     
+          <div class="alert alert-success" role="alert">
+            <table class="table table-borderless" width=100%>
+              <tbody>
+                <tr>
+                  <td text-align="centre" width="5%"><i class="fas fa-check-circle fa-2x"></i></td>
+                   <td width="95%">Your complaint has been successfully lodged</td>
+                </tr>
+                <tr>
+                  <td text-align="centre" width="5%"><i class="fas fa-envelope fa-2x"></i></td>
+                   <td width="95%"><p>A copy of the complaint details has been emailed to you</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td text-align="centre" width="5%"><i class="fas fa-tag fa-2x"></i></td>
+                  <td width="95%">   <p> Your reference number is <span class="lead"><strong>INV999999</strong></span></p></td>
+                </tr>
+                <tr>
+                  <td text-align="centre" width="5%"><i class="fas fa-search fa-2x"></i></td>
+                  <td width="95%"> <p> Your complaint will be investigated by:</p>
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th >Agency</th>
+                          <td>Mytown city council</td> 
+                        </tr>
+                        <tr>
+                          <tr>
+                          <th >Phone</th>
+                          <td>(07) 9999 9999</td> 
+                        </tr>
+                        <tr>
+                            <th >Email</th>
+                            <td><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></td> 
+                        </tr>
+                        <tr>
+                          <th >Website</th>
+                          <td><a href="#">www.mytown.com.au</a></td> 
+                        </tr>
+                     </tbody>
+                    </table>
+                    <p>Please contact the above agency if you need to provide further information or follow-up on your complaint.</p>
+                   </td>
+                </tr> 
+                   </tr>    
+              </tbody>
+            </table>
+          </div>
 
-        <div id="DownloadDocument">
-          <button id="DownloadDocument" class="qg-btn btn-primary" onclick="downloadDocument()">Download complaint details</button>
-        </div>  
-       
-        <br>
+
         <h2>What's next?</h2>
         <p>The responsible agency may contact you:</p>
         <ul>
@@ -255,6 +267,14 @@
           <li>To arrange to collect a sample or remaining food product.</li>
         </ul>
         <p>The outcome of any investigation may not able to be provided to you as this information remains confidential should there be any enforcement action taken against the food business.</p>
+
+        <h2>Download a copy of your food complaint</h2>
+        <p>If you did not enter an email address, you can download a copy of your food complaint as a PDF document.
+           Note: You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the complaint details. </p> 
+
+        <div id="DownloadDocument">
+          <button id="DownloadDocument" class="qg-btn btn-secondary" onclick="downloadDocument()">Download complaint details</button>
+        </div>  
 
         <!-- Page dates-->  
         <div class="qg-content-footer">
