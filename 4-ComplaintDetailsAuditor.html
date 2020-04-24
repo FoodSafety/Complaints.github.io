@@ -62,33 +62,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- SCRIPTS ADDED IN -->
-<!-- <script type="text/javascript">
-  $(document).ready(function(){
-   var complaint_type = sessionStorage.getItem("complaint_type");
-   var complaintPages = ["Allergy", "Licence", "Practice", "Label", "Poisoning", "Quality", "ForeignMatter", "Other"];
-    
-    if(complaintPages.includes("complaint_type") !== -1){
-        var pageName = ("4-ComplaintDetails" + complaint_type + ".html");
-        //alert(complaint_type + ": " + complaintSubType + "going to page: " + pageName);
-        window.open(pageName, "_self"); 
-    }
-});
-</script> 
--->
-
-<script type="text/javascript">
-$(document).ready(function(){
-  var complaintType = sessionStorage.getItem("complaint_type");
-  
-  if (complaintType !== null && complaintType !=='') {
-    var pageName = ("4-ComplaintDetails" + complaintType + ".html");
-    window.open(pageName, "_self"); 
-  }
-});
-</script> 
--->
-
 </head>
 
 <body data-qg-accessibility="true">
@@ -116,7 +89,7 @@ $(document).ready(function(){
         <p>Internal use only.  This is a prototype of the proposed online food safety complaint form.  
         This banner will not be shown in the final product.</p>
       </section>
-    </div>
+    </div>    
 
     <!-- Queensland Government Logo-->
     <div class="qg-coat-of-arms col-xs-6 col-md-4">
@@ -193,66 +166,170 @@ $(document).ready(function(){
 
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
-      
-        <div id="ComplaintPageLinks">
-          <h1>Complaint Details</h1>
-          <br>
-          <div class="alert alert-warning" role="alert">
-              <h3>You have clicked on the Complaint Details navigation menu item in the left hand side navigation</h3>
-              <p>This page has been added in for the prototype, and will not be included in the final product.
-                  The navigation for "4. Complaint Details" has not been dynamically programmed in the prototype to go to the correct complaint details page based on the complaint type selected.</p>
-              <p>Select the correct complaint details page below to continue.</p>
-          </div>
+        <h1>Complaint Details</h1>
+        <br>
+        <h2>Food auditor concern details</h2>
+        <form id="ComplaintDetailsFormAuditor">
 
-          <h2>Complaint detail pages</h2>
-          <ol>
-              <li><a href="4-ComplaintDetailsAllergy.html">Allergy or allergic reaction</a></li>
-              <li><a href="4-ComplaintDetailsLicence.html">Business operating without a licence</a></li>
-              <li><a href="4-ComplaintDetailsPractice.html">Cleanliness or business practice</a></li>
-              <li><a href="4-ComplaintDetailsAuditor.html">Food auditor</a></li>
-              <li><a href="4-ComplaintDetailsPoisoning.html">Food poisoning</a></li>
-              <li><a href="4-ComplaintDetailsQuality.html">Food quality</a></li>
-              <li><a href="4-ComplaintDetailsForeignMatter.html">Foreign object in food</a></li>
-             <li><a href="4-ComplaintDetailsLabel.html">Label or packaging</a></li>
-               <li><a href="4-ComplaintDetailsOther.html">Other</a></li>
-          </ol>
+          <div class="form-group">
+           <fieldset>
+
+            
+            <label for="AuditorConcernDetail">
+                <span class="lead">What is your main concern?  
+                <abbr title="(required)">*</abbr></span>
+                <small class="hint"> 
+                  Provide a detailed description about the nature of your complaint. 
+                </small>
+            </label>
+            <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorConcernDetail" id="AuditorConcernDetail"></textarea>
+            <br>
+
+            <h2>Food auditor and business details</h2>
+  
+            <label for="AuditorName">
+                <span class="lead">Auditor name
+                  <abbr title="(required)">*</abbr>
+                </span>
+                  <small class="hint"> 
+                    Please provide the name the auditor that your complaint is about.  
+                  </small>
+            </label>
+            <input class="form-control" type="text" name="AuditorName" id="AuditorName">
+            <br>
+            
+            <label for="AuditorBusinessName">
+                <span class="lead">Business name 
+                  <abbr title="(required)">*</abbr>
+                </span>
+                  <small class="hint"> 
+                    Please provide the name of the food auditing business that your complaint is about.  
+                  </small>
+            </label>
+            <input class="form-control" type="text" name="RetailerName" id="RetailerName">
+            <br>
+  
+
+            <h2>Address details</h2>
+            <label for="AuditorAddressLine1">
+                <span class="label">Address line 1 
+                </span>
+            </label>
+            <input class="form-control" type="text" name="AuditorAddressLine1" id="AuditorAddressLine1" maxlength = "100">
+
+            <br>
+            <label for="RetailerAddressLine2">
+                <span class="label">Address line 2 
+                </span>
+            <label>
+            <input class="form-control" type="text" name="AuditorAddressLine2" id="AuditorAddressLine2" maxlength = "100">
+
+            <br>
+            <label for="AuditorAddressSuburb">
+                <span class="label">Suburb
+                <abbr title="(required)">*</abbr>
+                </span>
+            </label>
+            <input type="text" name="RAuditorAddressSuburb" id="AuditorAddressSuburb" maxlength = "50">
+
+            <br>
+            <br>
+            <label for="AuditorAddressState">
+                <span class="label">State
+                <abbr title="(required)">*</abbr>
+                </span>
+            </label>
+            <select class="input-small" name="AuditorAddressState" id="AuditorAddressState">
+                <option>ACT</option>
+                <option>NSW</option>
+                <option>NT</option>
+                <option selected="selected">QLD</option>
+                <option>SA</option>
+                <option>TAS</option>
+                <option>VIC</option>
+                <option>WA</option>
+            </select>  
+    
+            <br>
+            <br>
+            <label for="AuditorAddressPostcode">
+                <span class="label">Post code
+                    <abbr title="(required)">*</abbr>
+                </span>
+            </label>
+            <input type="text" name="AuditorAddressPostCode" id="AuditorAddressPostCode" maxlength = "4">
+
+            <br>
+            <br>
+            <label for="AuditorAdditionalLocationDetails">
+                <span class="label">Additional location details 
+                </span>
+                <small class="hint"> 
+                Provide as much information about the where the food auditor business is located.  Enter any additional location details to describe where the food auditor business is physically located.
+                </small>
+            <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorAdditionalAddressInfo" id="AuditorAdditionalAddressInfo"></textarea>
+
+            <br>
+
+            <h2>Contact details</h2>
+  
+            <label for="AuditorPhone">
+                <span class="label">Phone number 
+                </span>
+            </label>
+            <input class="form-control" type="tel" name="AuditorPhoneNumber" id="AuditorPhoneNumber" pattern = [0-9]{10}>
+
+            <br>
+            <label for="AuditorWebsite">
+                <span class="label">Website address
+                </span>
+            </label>
+            <input class="form-control" type="url" name="AuditorWebsite" id="AuditorWebsite">
+            <br>
+                
+           </fieldset>
         </div>
+
+   
+        </form> 
 
         <!-- Page buttons -->
         <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="5-Retailer.html">Next</a>&nbsp;
-
+        <a class="qg-btn btn-primary" href="8-AboutYou.html">Next</a>&nbsp;
+        <a href="1-Home.html">Cancel</a>
+        <br>
+        <br>
 
         <!-- Page dates-->  
         <div class="qg-content-footer">
-            <dl>
-              <dt>Last updated:</dt>
-              <dd>05 March 2020</dd>
-              <dt>Last reviewed:</dt>
-              <dd>05 March 2020</dd>
-         <!-- Page dates-->   </dl>
-        </div>
-  </div>
-    
+          <dl>
+            <dt>Last updated:</dt>
+            <dd>05 March 2020</dd>
+            <dt>Last reviewed:</dt>
+            <dd>05 March 2020</dd>
+       <!-- Page dates-->   </dl>
+      </div>
+</div>
+  
 
-    <!-- LEFT SIDE NAVIGATION --> 
-    <nav id="qg-section-nav" aria-label="side navigation" role="navigation">
-      <h2><a href="#">The Food Pantry</a></h2>
-      <ul aria-label="section navigation">
-        <li><a href="#">Make a food safety complaint</a>
-          <ol class="guide-sub-nav">
-            <li><a href="1-Home.html" aria-hidden="true" ><span class="page-number">1</span>Home</a></li>
-            <li><a href="2-AcceptTerms.html"aria-hidden="true"><span class="page-number">2</span>Accept terms of use</a></li>                
-            <li><a href="3-ComplaintType.html" aria-hidden="true"><span class="page-number">3</span>Complaint type</a></li>
-            <li><a href="4-ComplaintDetails.html" aria-hidden="true" class="active"><span class="page-number">4</span>Complaint details</a></li>
-            <li><a href="5-Retailer.html" aria-hidden="true"><span class="page-number">5</span>Business details</a></li>
-            <li><a href="6-Manufacturer.html" aria-hidden="true"><span class="page-number">6</span>Manufacturer details</a></li>
-            <li><a href="7-Documents.html" aria-hidden="true"><span class="page-number">7</span>Documents</a></li>
-            <li><a href="8-AboutYou.html" aria-hidden="true"><span class="page-number">8</span>About you</a></li>
-          </ol>
-        </li>
-      </ul>
-    </nav>
+  <!-- LEFT SIDE NAVIGATION --> 
+  <nav id="qg-section-nav" aria-label="side navigation" role="navigation">
+    <h2><a href="#">The Food Pantry</a></h2>
+    <ul aria-label="section navigation">
+      <li><a href="#">Make a food safety complaint</a>
+        <ol class="guide-sub-nav">
+          <li><a href="1-Home.html" aria-hidden="true" ><span class="page-number">1</span>Home</a></li>
+          <li><a href="2-AcceptTerms.html"aria-hidden="true"><span class="page-number">2</span>Accept terms of use</a></li>                
+          <li><a href="3-ComplaintType.html" aria-hidden="true"><span class="page-number">3</span>Complaint type</a></li>
+          <li><a href="4-ComplaintDetails.html" aria-hidden="true" class="active"><span class="page-number">4</span>Complaint details</a></li>
+          <li><a href="5-Retailer.html" aria-hidden="true"><span class="page-number">5</span>Business details</a></li>
+          <li><a href="6-Manufacturer.html" aria-hidden="true"><span class="page-number">6</span>Manufacturer details</a></li>
+          <li><a href="7-Documents.html" aria-hidden="true"><span class="page-number">7</span>Documents</a></li>
+          <li><a href="8-AboutYou.html" aria-hidden="true"><span class="page-number">8</span>About you</a></li>
+         </ol>
+      </li>
+    </ul>
+  </nav>
   </div>
 
    <!-- Feeback button and sharing links-->
