@@ -168,24 +168,12 @@
       <div id="qg-primary-content" role="main">
         <h1>Complaint Details</h1>
         <br>
-        <h2>Food auditor concern details</h2>
         <form id="ComplaintDetailsFormAuditor">
 
           <div class="form-group">
            <fieldset>
-
-            
-            <label for="AuditorConcernDetail">
-                <span class="lead">What is your main concern?  
-                <abbr title="(required)">*</abbr></span>
-                <small class="hint"> 
-                  Provide a detailed description about the nature of your complaint. 
-                </small>
-            </label>
-            <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorConcernDetail" id="AuditorConcernDetail"></textarea>
-            <br>
-
-            <h2>Food auditor and business details</h2>
+          
+            <h2>Food auditor details</h2>
   
             <label for="AuditorName">
                 <span class="lead">Auditor name
@@ -200,8 +188,7 @@
             
             <label for="AuditorBusinessName">
                 <span class="lead">Business name 
-                  <abbr title="(required)">*</abbr>
-                </span>
+                 </span>
                   <small class="hint"> 
                     Please provide the name of the food auditing business that your complaint is about.  
                   </small>
@@ -209,89 +196,106 @@
             <input class="form-control" type="text" name="RetailerName" id="RetailerName">
             <br>
   
+            <h2>Food auditor concern details</h2>
+            <label for="AuditorConcernDetail">
+              <span class="lead">What is your main concern?  
+              <abbr title="(required)">*</abbr></span>
+              <small class="hint"> 
+                Provide a detailed description about the nature of your complaint. 
+              </small>
+          </label>
+          <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorConcernDetail" id="AuditorConcernDetail"></textarea>
+          <br>
 
-            <h2>Address details</h2>
-            <label for="AuditorAddressLine1">
-                <span class="label">Address line 1 
-                </span>
-            </label>
-            <input class="form-control" type="text" name="AuditorAddressLine1" id="AuditorAddressLine1" maxlength = "100">
-
-            <br>
-            <label for="RetailerAddressLine2">
-                <span class="label">Address line 2 
-                </span>
-            <label>
-            <input class="form-control" type="text" name="AuditorAddressLine2" id="AuditorAddressLine2" maxlength = "100">
-
-            <br>
-            <label for="AuditorAddressSuburb">
-                <span class="label">Suburb
-                <abbr title="(required)">*</abbr>
-                </span>
-            </label>
-            <input type="text" name="RAuditorAddressSuburb" id="AuditorAddressSuburb" maxlength = "50">
-
-            <br>
-            <br>
-            <label for="AuditorAddressState">
-                <span class="label">State
-                <abbr title="(required)">*</abbr>
-                </span>
-            </label>
-            <select class="input-small" name="AuditorAddressState" id="AuditorAddressState">
-                <option>ACT</option>
-                <option>NSW</option>
-                <option>NT</option>
-                <option selected="selected">QLD</option>
-                <option>SA</option>
-                <option>TAS</option>
-                <option>VIC</option>
-                <option>WA</option>
-            </select>  
-    
-            <br>
-            <br>
-            <label for="AuditorAddressPostcode">
-                <span class="label">Post code
-                    <abbr title="(required)">*</abbr>
-                </span>
-            </label>
-            <input type="text" name="AuditorAddressPostCode" id="AuditorAddressPostCode" maxlength = "4">
-
-            <br>
-            <br>
-            <label for="AuditorAdditionalLocationDetails">
-                <span class="label">Additional location details 
-                </span>
-                <small class="hint"> 
-                Provide as much information about the where the food auditor business is located.  Enter any additional location details to describe where the food auditor business is physically located.
-                </small>
-            <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorAdditionalAddressInfo" id="AuditorAdditionalAddressInfo"></textarea>
-
-            <br>
-
-            <h2>Contact details</h2>
+          
+          <h2>Contact details</h2>
   
-            <label for="AuditorPhone">
-                <span class="label">Phone number 
-                </span>
-            </label>
-            <input class="form-control" type="tel" name="AuditorPhoneNumber" id="AuditorPhoneNumber" pattern = [0-9]{10}>
+          <label for="AuditorPhone">
+              <span class="label">Phone number 
+              </span>
+          </label>
+          <input class="form-control" type="tel" name="AuditorPhoneNumber" id="AuditorPhoneNumber" pattern = [0-9]{10}>
 
-            <br>
-            <label for="AuditorWebsite">
-                <span class="label">Website address
-                </span>
-            </label>
-            <input class="form-control" type="url" name="AuditorWebsite" id="AuditorWebsite">
-            <br>
-                
-           </fieldset>
-        </div>
+          <br>
+          <label for="AuditorEmail">
+              <span class="label">Email address
+              </span>
+          </label>
+          <input class="form-control" type="email" name="AuditorEmail" id="AuditorEmail">
+          <br>
 
-   
-        </form> 
+          <br>
+          <label for="AuditorWebsite">
+              <span class="label">Website address
+              </span>
+          </label>
+          <input class="form-control" type="url" name="AuditorWebsite" id="AuditorWebsite">
+          <br>
+
+          <h2>Address details</h2>
+          <label for="AuditorAddressLine1">
+              <span class="label">Address line 1 
+              </span>
+          </label>
+          <input class="form-control" type="text" name="AuditorAddressLine1" id="AuditorAddressLine1" maxlength = "100">
+
+          <br>
+          <label for="RetailerAddressLine2">
+              <span class="label">Address line 2 
+              </span>
+          <label>
+          <input class="form-control" type="text" name="AuditorAddressLine2" id="AuditorAddressLine2" maxlength = "100">
+
+          <br>
+          <label for="AuditorAddressSuburb">
+              <span class="label">Suburb
+              <abbr title="(required)">*</abbr>
+              </span>
+          </label>
+          <input type="text" name="RAuditorAddressSuburb" id="AuditorAddressSuburb" maxlength = "50">
+
+          <br>
+          <br>
+          <label for="AuditorAddressState">
+              <span class="label">State
+              <abbr title="(required)">*</abbr>
+              </span>
+          </label>
+          <select class="input-small" name="AuditorAddressState" id="AuditorAddressState">
+              <option>ACT</option>
+              <option>NSW</option>
+              <option>NT</option>
+              <option selected="selected">QLD</option>
+              <option>SA</option>
+              <option>TAS</option>
+              <option>VIC</option>
+              <option>WA</option>
+          </select>  
+  
+          <br>
+          <br>
+          <label for="AuditorAddressPostcode">
+              <span class="label">Post code
+                  <abbr title="(required)">*</abbr>
+              </span>
+          </label>
+          <input type="text" name="AuditorAddressPostCode" id="AuditorAddressPostCode" maxlength = "4">
+
+          <br>
+          <br>
+          <label for="AuditorAdditionalLocationDetails">
+              <span class="label">Additional location details 
+              </span>
+              <small class="hint"> 
+              Provide as much information about the where the food auditor business is located.  Enter any additional location details to describe where the food auditor business is physically located.
+              </small>
+          <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorAdditionalAddressInfo" id="AuditorAdditionalAddressInfo"></textarea>
+          <br>
+          </fieldset>
+      </div>
+
+  
+      </form> 
 
         <!-- Page buttons -->
         <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
