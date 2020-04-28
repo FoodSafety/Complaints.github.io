@@ -148,12 +148,14 @@
     });
   </script> 
 
-<!-- Script for on selecting whether to continue with complaint or not-->
+<!-- Script for on selecting a food business from the search results-->
 <script type="text/javascript">
   $(document).ready(function(){
       $('input[type="radio"]').click(function(){
         var selectedvalue = $(this).val(); 
           $("#RetailerContactDetails").show();
+          $("#Website").hide();
+          $("#RetailerEnterDetails").hide();
           $("#PrimaryProducer").show();
           $("#GovernmentFacility").show();
           $("#RetailerContacted").show();
@@ -575,7 +577,7 @@
             <h2>Enter food business details</h2>
             <fieldset>
                <label for="RetailerName">
-                <span class="lead">Business name 
+                <span class="lead">Food business name 
                   <abbr title="(required)">*</abbr>
                 </span>
                   <small class="hint"> 
