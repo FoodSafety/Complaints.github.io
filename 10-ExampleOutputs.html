@@ -64,6 +64,25 @@
 <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg="nest"></script>
 
 <!--SCRIPTS ADDED IN-->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#ShowStuff").hide();
+
+  });
+</script>
+
+<script>
+  function showStuff() {
+    $("#ShowStuff").show();
+}
+</script>
+
+<script>
+  function hideStuff() {
+    $("#ShowStuff").hide();
+}
+</script>
+
 <!--Show an example of documents uploaded-->
 <script>
   function downloadDocument() {
@@ -130,8 +149,7 @@
       <section text-align="centre" vertical-align="middle">
         <p>Internal use only.  This is a prototype of the proposed online food safety complaint form.  
         This banner will not be shown in the final product.</p>
-   <!--     <a class="qg-btn btn-default" href="10-ExampleOutputs.html">View example PDF documents and emails</a>
-   -->   </section>
+      </section>
     </div>
 
     <!-- Queensland Government Logo-->
@@ -194,7 +212,7 @@
 
   <!-- Page content-->
   <div id="qg-content">
-    <div id="qg-three-col" class="row wide">
+    <div id="qg-two-col-nav" class="row wide">
 
       <!-- Breadcrumbs-->
       <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
@@ -209,73 +227,80 @@
 
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
-
-          <h1>Thank you for reporting your food safety complaint</h1>
-     
-          <div class="alert alert-success" role="alert">
-            <table class="table table-borderless" width=100%>
-              <tbody>
-                <tr>
-                  <td text-align="centre" width="5%"><i class="fas fa-check-circle fa-2x"></i></td>
-                   <td width="95%">Your complaint has been successfully lodged</td>
-                </tr>
-                <tr>
-                  <td text-align="centre" width="5%"><i class="fas fa-envelope fa-2x"></i></td>
-                   <td width="95%">
-                     <p>A copy of the complaint details has been emailed to you.</p>
-                     <p>If you did not enter an email address, you can download a copy of your food complaint as a PDF document below.
-                   </p> 
-                  </td>
-                </tr>
-                <tr>
-                  <td text-align="centre" width="5%"><i class="fas fa-tag fa-2x"></i></td>
-                  <td width="95%">   <p> Your reference number is <span class="lead"><strong>INV999999</strong></span></p></td>
-                </tr>
-                <tr>
-                  <td text-align="centre" width="5%"><i class="fas fa-search fa-2x"></i></td>
-                  <td width="95%"> <p> Your complaint will be investigated by:</p>
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <th >Agency</th>
-                          <td>Mytown city council</td> 
-                        </tr>
-                        <tr>
-                          <tr>
-                          <th >Phone</th>
-                          <td>(07) 9999 9999</td> 
-                        </tr>
-                        <tr>
-                            <th >Email</th>
-                            <td><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></td> 
-                        </tr>
-                        <tr>
-                          <th >Website</th>
-                          <td><a href="#">www.mytown.com.au</a></td> 
-                        </tr>
-                     </tbody>
-                    </table>
-                    <p>Please contact the above agency if you need to provide further information or follow-up on your complaint.</p>
-                   </td>
-                </tr> 
-                   </tr>    
-              </tbody>
-            </table>
+      
+        <div id="ComplaintPageLinks">
+          <h1>Example PDF and email outputs</h1>
+          <br>
+          <div class="alert alert-warning" role="alert">
+              <h3>You have clicked on the view example outputs from the thankyou page.</h3>
+              <p>This page has been added in for the prototype, and will not be included in the final product.</p>
+               <p>Select to view and example PDF and email for each complaint type.</p>
           </div>
+          <br>
+          <br>
 
+          <table class="table" width=100%>
+            <thead>
+              <td><strong>Complaint type</strong></td>
+              <td><strong>PDF download</strong></td>
+              <td><strong>Email</strong></td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Allergy or allergic reaction</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadAllergy.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailAllergy.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Business operating without a licence</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadLicence.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailLicence.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Cleanliness, business practice or customer service</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadPractice.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailPractice.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Food auditor</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadAuditor.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailAuditor.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Food poisoning</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadPoisoning.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailPoisoning.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Food quality</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadQuality.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailQuality.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Foreign object in food</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadForeignObject.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailForeignObject.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Label or packaging</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadLabel.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailLabel.msg" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Other</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadOther.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailOther.msg"  data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+             </tbody>
+          </table>
+    
+          <br>
+          <br>
+        </div>
 
-        <h2>What's next?</h2>
-        <p>The responsible agency may contact you:</p>
-        <ul>
-          <li>If further information is needed about your complaint</li>
-          <li>To arrange to collect a sample or remaining food product.</li>
-        </ul>
-   
-        <h2>Download complaint details</h2>
-        <p> You can download a copy of your food complaint as a PDF document. You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the PDF document.</p>
-        <div id="DownloadDocument">
-          <button id="DownloadDocument" class="qg-btn btn-secondary" onclick="downloadDocument()">Download PDF</button>
-        </div> 
+        <!-- Page buttons -->
+        <a class="qg-btn btn-default" href="9-Thankyou.html">Previous</a>&nbsp;
+    
 
         <!-- Page dates-->  
         <div class="qg-content-footer">
@@ -287,18 +312,7 @@
           </dl>
         </div>
   </div>
-  <!--RIGHT SIDE -->
-  <aside id="qg-secondary-content">
-      <div class="qg-aside" role="complementary">
-        <h2><i class="fas fa-comment-dots"></i>&nbsp;Provide feedback</h2>
-          <p>Tell us about your experience. Your feedback is important to us in improving this service. Please complete a short survey to give us feedback on your experience today.
-          </p>
-           <button id="Survey" class="qg-btn btn-secondary" onclick="startSurvey()">Start survey</button>
-    </div>
-  </aside>  
-  
-  
-
+    
 
     <!-- LEFT SIDE NAVIGATION --> 
     <nav id="qg-section-nav" aria-label="side navigation" role="navigation">
@@ -309,20 +323,18 @@
             <li><a href="1-Home.html" aria-hidden="true" ><span class="page-number">1</span>Home</a></li>
             <li><a href="2-AcceptTerms.html"aria-hidden="true"><span class="page-number">2</span>Accept terms of use</a></li>                
             <li><a href="3-ComplaintType.html" aria-hidden="true"><span class="page-number">3</span>Complaint type</a></li>
-            <li><a href="4-ComplaintDetails.html" aria-hidden="true" ><span class="page-number">4</span>Complaint details</a></li>
+            <li><a href="4-ComplaintDetails.html" aria-hidden="true"><span class="page-number">4</span>Complaint details</a></li>
             <li><a href="5-Retailer.html" aria-hidden="true"><span class="page-number">5</span>Business details</a></li>
             <li><a href="6-Manufacturer.html" aria-hidden="true"><span class="page-number">6</span>Manufacturer details</a></li>
             <li><a href="7-Documents.html" aria-hidden="true"><span class="page-number">7</span>Documents</a></li>
             <li><a href="8-AboutYou.html" aria-hidden="true"><span class="page-number">8</span>About you</a></li>
-           </ol>
+          </ol>
         </li>
       </ul>
     </nav>
- </div>
+  </div>
 
-
-
-  <!-- Feeback button and sharing links-->
+   <!-- Feeback button and sharing links-->
    <div id="qg-options" class="row">
      <!-- Sharing options --> 
      <div id="qg-share" class="qg-share"></div>

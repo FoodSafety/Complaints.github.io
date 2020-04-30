@@ -64,10 +64,25 @@
 <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg="nest"></script>
 <link href="css/QH-checkbox.css" rel="stylesheet">
 
+<!-- Style for additional red alert-->
+<style>
+  .alert-halt {
+   border-left: 5px solid #B90824;
+   background-color:#ffeded;
+   margin: 0px;
+   padding: 15px;
+   border-radius: 0;
+   font-weight: normal;
+   color: #000;
+  }
+ </style> 
+
 <!-- SCRIPTS ADDED IN -->
 <script type="text/javascript">
   $(document).ready(function(){
       $("#RetailerSearch").hide();
+      $("#RetailerSearchNoResults").hide();
+      $("#RetailerSearchTooManyResults").hide();
       $("#RetailerSearchResults").hide();
       $("#RetailerEnterDetails").hide();
       $("#Website").hide();
@@ -86,7 +101,9 @@
     $(document).ready(function(){
         $('#BusinessType').click(function(){
           $("#RetailerSearch").hide();
+          $("#RetailerSearchNoResults").hide();
           $("#RetailerSearchResults").hide();
+          $("#RetailerSearchTooManyResults").hide();
           $("#RetailerEnterDetails").hide();
           $("#Website").hide();
           $("#RetailerContactDetails").hide();
@@ -181,10 +198,12 @@
 </script> 
 
 
-<!-- Script to show search results search -->
+<!-- Script to show no search results found -->
 <script>
-  function showResults() {
-    $("#RetailerSearchResults").show();
+  function showNoResults() {
+    $("#RetailerSearchNoResults").show();
+    $("#RetailerSearchResults").hide();
+    $("#RetailerSearchTooManyResults").hide();
     $("#RetailerEnterDetails").hide();
     $("#Website").hide();
     $("#RetailerContactDetails").hide();
@@ -201,7 +220,56 @@
     document.getElementById("SearchResults-5").checked = false;
     document.getElementById("RetailerContacted-Yes").checked = false;
     document.getElementById("RetailerContacted-No").checked = false;
+}
+</script>
 
+<!-- Script to show 1 to 50 search results  -->
+<script>
+  function showResults() {
+    $("#RetailerSearchNoResults").hide();
+    $("#RetailerSearchResults").show();
+    $("#RetailerSearchTooManyResults").hide();
+    $("#RetailerEnterDetails").hide();
+    $("#Website").hide();
+    $("#RetailerContactDetails").hide();
+    $("#PrimaryProducer").hide();
+    $("#GovernmentFacility").hide();
+    $("#RetailerContacted").hide();
+    $("#RetailerResponse").hide();
+    $("#NextButtons").hide();
+
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;
+}
+</script>
+
+<!-- Script to show too many search results found -->
+<script>
+  function showTooManyResults() {
+    $("#RetailerSearchNoResults").hide();
+    $("#RetailerSearchResults").hide();
+    $("#RetailerSearchTooManyResults").show();
+    $("#RetailerEnterDetails").hide();
+    $("#Website").hide();
+    $("#RetailerContactDetails").hide();
+    $("#PrimaryProducer").hide();
+    $("#GovernmentFacility").hide();
+    $("#RetailerContacted").hide();
+    $("#RetailerResponse").hide();
+    $("#NextButtons").hide();
+
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;
 }
 </script>
 
@@ -229,6 +297,8 @@
 <script>
   function resetSearch() {
     $("#RetailerSearchResults").hide();
+    $("#RetailerSearchNoResults").hide();
+    $("#RetailerSearchTooManyResults").hide();
     $("#RetailerContactDetails").hide();
     $("#RetailerEnterDetails").hide();
     $("#Website").hide();
@@ -465,12 +535,37 @@
                <br>    
                <br>        
               <div id="SearchforRetailer">
-                <button type="button" class="qg-btn btn-primary" onclick="showResults()">Search</button>&nbsp;
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Search</button>&nbsp;
                 <button type="button" class="qg-btn btn-default" onclick="resetSearch()">Reset</button>&nbsp;
               </div>
           </div>
         </div>
 
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span>
+                  <h1 class="modal-title" id="exampleModalLongTitle">Example Google search results</h1>
+                  <small>Note: This pop-up has been added in for the prototype, and will not be included in the final product.</small>
+                </span>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                 <p>Select how many results you want to show as an example of the Google search functionality</p>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="showNoResults()" data-dismiss="modal"> 0 </button>
+                <button type="button" class="btn btn-secondary" onclick="showResults()" data-dismiss="modal"> Between 1 and 50</button>
+                <button type="button" class="btn btn-secondary" onclick="showTooManyResults()" data-dismiss="modal"> > 50</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
           <div class="form-group" id="RetailerSearchResults">
             <h2>Search results</h2>  
@@ -556,6 +651,33 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <div class="form-group" id="RetailerSearchNoResults">
+            <h2>Search results</h2>  
+            <p class="lead">0 results were found.</p>
+            <br>
+            <div class="alert-halt" role="alert">
+              <p>No results were found matching the business name and suburb. Please check the name and suburb or postcode you have entered and try again.</p>
+              <p>If you believe the details you have entered are correct, then the business name and the suburb details may not exist in our listing.  
+                Please select to manually add the food business name and address details.</p>
+              <br>
+              <button type="button" class="qg-btn btn-default" onclick="showRetailerNotFound()">Business not found?</button>&nbsp;
+            </div>     
+          </div>
+
+          <div class="form-group" id="RetailerSearchTooManyResults">
+            <h2>Search results</h2>  
+            <p class="lead">326 results were found.</p>
+            <br>
+            <div class="alert alert-warning" role="alert">
+              <p>More than 50 results were found for this search term.  Please refine your search to continue. </p>
+              <p>If you are unable to find the then the food business, then please select to manually add the food business name and address details.
+              </p>
+              <br>
+              <button type="button" class="qg-btn btn-default" onclick="showRetailerNotFound()">Business not found?</button>&nbsp;
+            </div>
+            <br>
           </div>
 
           <div class="form-group" id="RetailerContactDetails">
