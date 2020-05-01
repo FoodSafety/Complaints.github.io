@@ -282,19 +282,23 @@
                 <br>
 
                 <label for="ManufacturerAddressSuburb">
-                  <span class="label">Suburb</span>
+                  <span class="label">Suburb 
+                  <abbr title="(required)">*</abbr>
+                </span>
                 </label>
                 <input type="text" name="ManufacturerAddressSuburb" id="ManufacturerAddressSuburb" maxlength = "50">
                 <br>
                 <br>
                 <label for="ManufacturerAddressState">
-                  <span class="label">State</span>
+                  <span class="label">State 
+                  <abbr title="(required)">*</abbr>
+                </span>
                 </label>
                 <select class="input-small" name="ManufacturerAddressState" id="ManufacturerAddressState">
                   <option>ACT</option>
                   <option>NSW</option>
                   <option>NT</option>
-                  <option>QLD</option>
+                  <option selected="selected">QLD</option>
                   <option>SA</option>
                   <option>TAS</option>
                   <option>VIC</option>
@@ -303,8 +307,10 @@
                 <br>
                 <br>
                 <label for="ManufacturerAddressPostcode">
-                    <span class="label">Post code</span>
-                </label>
+                    <span class="label">Post code
+                    <abbr title="(required)">*</abbr>
+                  </span>
+                  </label>
                 <input type="text" name="ManufacturerAddressPostCode" id="ManufacturerAddressPostCode" maxlength = "4">
                 <br>
               </fieldset>  
