@@ -174,23 +174,33 @@
            <fieldset>
           
             <h2>Food auditor details</h2>
-  
-            <label for="AuditorName">
-                <span class="lead">Auditor name
+            <small class="hint"> 
+              Please provide the details of the food auditor that your complaint is about.  
+            </small>
+            <br>
+
+            <label for="AuditorFirstName">
+                <span class="lead">First name
                   <abbr title="(required)">*</abbr>
                 </span>
-                  <small class="hint"> 
-                    Please provide the name the auditor that your complaint is about.  
-                  </small>
             </label>
-            <input class="form-control" type="text" name="AuditorName" id="AuditorName">
+            <input class="form-control" type="text" name="AuditorFirstName" id="AuditorFirstName">
             <br>
             
+            <label for="AuditorSurame">
+              <span class="lead">Surname
+                <abbr title="(required)">*</abbr>
+              </span>
+ 
+          </label>
+          <input class="form-control" type="text" name="AuditorSurname" id="AuditorSurname">
+          <br>
+
             <label for="AuditorBusinessName">
                 <span class="lead">Business name 
                  </span>
                   <small class="hint"> 
-                    Please provide the name of the food auditing business (if applicable) that your complaint is about.  
+                    Please provide the name of the food auditing business (if known).  
                   </small>
             </label>
             <input class="form-control" type="text" name="RetailerName" id="RetailerName">
