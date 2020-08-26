@@ -119,6 +119,10 @@
           document.getElementById("SearchResults-5").checked = false;
           document.getElementById("RetailerContacted-Yes").checked = false;
           document.getElementById("RetailerContacted-No").checked = false;
+          document.getElementById("GovernmentFacility-Yes").checked = false;
+          document.getElementById("GovernmentFacility-No").checked = false;
+          document.getElementById("PrimaryProducer-Yes").checked = false;
+          document.getElementById("PrimaryProducer-No").checked = false;
       
           var selectedvalue = $("input[name='BusinessType']:checked").val();
           //alert("Selected value is: " + selectedvalue);
@@ -128,37 +132,37 @@
               break;
             case "RetailerLocation-FoodTruck":
               $("#RetailerEnterDetails").show();
-              $("#PrimaryProducer").show();
               $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
               $("#RetailerContacted").show();
               $("#NextButtons").show();
               break;
             case "RetailerLocation-MarketStall":
               $("#RetailerEnterDetails").show();
-              $("#PrimaryProducer").show();
               $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
               $("#RetailerContacted").show();
               $("#NextButtons").show();
               break;
             case "RetailerLocation-Other":
               $("#RetailerEnterDetails").show();
-              $("#PrimaryProducer").show();
               $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
               $("#RetailerContacted").show();
               $("#NextButtons").show();
               break;
               case "RetailerLocation-Website":
               $("#Website").show();
-              $("#PrimaryProducer").show();
               $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
               $("#RetailerContacted").show();
               $("#NextButtons").show();
               break;            
             default:
               $("#RetailerEnterDetails").show();
-              $("#PrimaryProducer").show();
               $("#GovernmentFacility").show();
-              $("#RetailerContacted").show();
+              $("#PrimaryProducer").hide();
+             $("#RetailerContacted").show();
               $("#NextButtons").show();
           }
         });
@@ -166,6 +170,7 @@
   </script> 
 
 <!-- Script for on selecting a food business from the search results-->
+<!--
 <script type="text/javascript">
   $(document).ready(function(){
       $('input[type="radio"]').click(function(){
@@ -173,10 +178,41 @@
           $("#RetailerContactDetails").show();
           $("#Website").hide();
           $("#RetailerEnterDetails").hide();
-          $("#PrimaryProducer").show();
+          $("#PrimaryProducer").hide();
           $("#GovernmentFacility").show();
           $("#RetailerContacted").show();
           $("#NextButtons").show();
+      });
+  });
+</script> 
+-->
+<!-- Script for on selecting a food business from the search results-->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#RetailerSearchResults').click(function(){
+          $("#RetailerContactDetails").show();
+          $("#Website").hide();
+          $("#RetailerEnterDetails").hide();
+          $("#PrimaryProducer").hide();
+          $("#GovernmentFacility").show();
+          $("#RetailerContacted").show();
+          $("#NextButtons").show();
+      });
+  });
+</script> 
+
+<!--Show or hide page sections based on selecting whether State Government facility-->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#GovernmentFacility').click(function(){
+        var selectedvalue = $("input[name='GovernmentFacility']:checked").val();
+        //alert("Selected value is: " + selectedvalue);
+        if (selectedvalue == "GovernmentFacility-Yes") {
+          $('#PrimaryProducer').hide();
+        }
+        else {
+          $('#PrimaryProducer').show();
+        }
       });
   });
 </script> 
@@ -220,6 +256,10 @@
     document.getElementById("SearchResults-5").checked = false;
     document.getElementById("RetailerContacted-Yes").checked = false;
     document.getElementById("RetailerContacted-No").checked = false;
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
 }
 </script>
 
@@ -245,6 +285,10 @@
     document.getElementById("SearchResults-5").checked = false;
     document.getElementById("RetailerContacted-Yes").checked = false;
     document.getElementById("RetailerContacted-No").checked = false;
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
 }
 </script>
 
@@ -270,6 +314,10 @@
     document.getElementById("SearchResults-5").checked = false;
     document.getElementById("RetailerContacted-Yes").checked = false;
     document.getElementById("RetailerContacted-No").checked = false;
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
 }
 </script>
 
@@ -278,8 +326,8 @@
   function showRetailerNotFound() {
     $("#RetailerContactDetails").hide();
     $("#RetailerEnterDetails").show();
-    $("#PrimaryProducer").show();
     $("#GovernmentFacility").show();
+    $("#PrimaryProducer").hide();
     $("#RetailerContacted").show();
     $("#NextButtons").show();   
     $("#RetailerResponse").hide();
@@ -290,6 +338,10 @@
     document.getElementById("SearchResults-5").checked = false;  
     document.getElementById("RetailerContacted-Yes").checked = false;
     document.getElementById("RetailerContacted-No").checked = false;  
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
  }
 </script>
 
@@ -313,7 +365,11 @@
     document.getElementById("SearchResults-4").checked = false;
     document.getElementById("SearchResults-5").checked = false;  
     document.getElementById("RetailerContacted-Yes").checked = false;
-    document.getElementById("RetailerContacted-No").checked = false;      
+    document.getElementById("RetailerContacted-No").checked = false;  
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;    
 }
 </script>
 
@@ -802,6 +858,31 @@
           </div>
 
 
+          <div class="form-group" id="GovernmentFacility" >
+            <fieldset>
+              <label>
+                <span class="lead">Is your complaint about food that is provided by a Queensland State Government facility? </span>
+                <abbr title="(required)">*</abbr>
+                <p> 
+                  For example: state school or public hospital
+                </p>
+              </label>
+              <ol class="questions">
+                <ul class= "choices compact">
+                  <li>
+                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-Yes" value="GovernmentFacility-Yes" unchecked/>
+                    <label for="GovernmentFacility-Yes">Yes</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-No" value="GovernmentFacility-No" unchecked/>
+                    <label for="GovernmentFacility-No">No</label>
+                  </li>
+                </ul>
+              </ol> 
+            </fieldset> 
+          </div>
+
+ 
           <div class="form-group" id="PrimaryProducer" >
             <fieldset>
               <label>
@@ -835,31 +916,7 @@
               </ol> 
             </fieldset> 
           </div>
-
-          <div class="form-group" id="GovernmentFacility" >
-            <fieldset>
-              <label>
-                <span class="lead">Is your complaint about food that is provided by a Queensland State Government facility? </span>
-                <abbr title="(required)">*</abbr>
-                <p> 
-                  For example: state school or public hospital
-                </p>
-              </label>
-              <ol class="questions">
-                <ul class= "choices compact">
-                  <li>
-                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-Yes" value="GovernmentFacility-Yes" unchecked/>
-                    <label for="GovernmentFacility-Yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-No" value="GovernmentFacility-No" unchecked/>
-                    <label for="GovernmentFacility-No">No</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset> 
-          </div>
-
+          
           <div class="form-group" id="RetailerContacted">
             <fieldset>
               <label>
