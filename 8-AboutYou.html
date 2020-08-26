@@ -79,19 +79,41 @@
 <!--Show or hide page sections on page load-->
 <script type="text/javascript">
   $(document).ready(function(){
+    $('#RemainAnonymous').show();
     $('#AnonymousAlert').hide();
+    $('#Complainant').hide();
+    $('#ComplainantContact').hide();
+    $('#ComplainantAddress').hide();
+    $('#Declaration').hide();
+    $('#NextButtons').hide();
   });
 </script> 
 
+
+<!--Show or hide page sections based on whether the has food manufacturer details-->
 <script type="text/javascript">
- function showAnonymousAlert() {
-  var checkBox = document.getElementById("isAnonymous");
-  if (checkBox.checked == true){
-    $('#AnonymousAlert').show();;
-  } else {
-    $('#AnonymousAlert').hide();;
-  }
-  }
+  $(document).ready(function(){
+      $('#RemainAnonymous').click(function(){
+        var selectedvalue = $("input[name='RemainAnonymous']:checked").val();
+        //alert("Selected value is: " + selectedvalue);
+        if (selectedvalue == "RemainAnonymous-Yes") {
+          $('#AnonymousAlert').show();
+          $('#Complainant').hide();
+          $('#ComplainantContact').hide();
+          $('#ComplainantAddress').hide();
+          $('#Declaration').show();
+          $('#NextButtons').show();
+        }
+        else {
+          $('#AnonymousAlert').hide();
+          $('#Complainant').show();
+          $('#ComplainantContact').show();
+          $('#ComplainantAddress').show();
+          $('#Declaration').show();
+          $('#NextButtons').show();
+          }
+      });
+  });
 </script> 
 
 </head>
@@ -200,26 +222,32 @@
       <div id="qg-primary-content" role="main">
         <h1>About you</h1>
         <br>
-        <p>Your contact details are kept confidential and will only be provided to other Government agencies as needed for their investigation into your complaint. 
-        </p>
+
         
         <form id="AboutYouForm">
-          <div class="form-group" id="Complainant">
+          <div class="form-group" id="RemainAnonymous">
             <fieldset>
-              <div class="form-group">
-                <label for="ComplainantName">
-                   <span class="lead">Name
-                   </span>
-                </label>
-                <input class="form-control" type="text" name="ComplainantName" id="ComplainantName">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="" id="isAnonymous" onclick="showAnonymousAlert()">I wish to remain anonymous
-                   </label>
-                </div>
-              </fieldset>
-          </div> 
-
+              <label>
+                <span class="lead">Do you wish to remain anonymous </span>
+                <abbr title="(required)">*</abbr>
+              </label>
+              <small>Your contact details are kept confidential and will only be provided to other Government agencies as needed for their investigation into your complaint. 
+              </small>             
+              <ol class="questions">
+                <ul class= "choices compact">
+                  <li>
+                    <input type="radio" name="RemainAnonymous" id="RemainAnonymous-Yes" value="RemainAnonymous-Yes" unchecked/>
+                    <label for="RemainAnonymous-Yes">Yes</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="RemainAnonymous" id="RemainAnonymous-No" value="RemainAnonymous-No" unchecked/>
+                    <label for="RemainAnonymous-No">No</label>
+                  </li>
+                </ul>
+              </ol> 
+            </fieldset>  
+          </div>
+      
           <div id="AnonymousAlert" class="alert alert-warning" role="alert">
             <h3><i class="material-icons"> info </i>&nbsp You can remain anonymous</h3>
             <p>
@@ -227,6 +255,19 @@
               about your complaint, or to arrange to pick up any leftover food, packaging or labels.  
            </p>
           </div>
+
+
+          <div class="form-group" id="Complainant">
+            <fieldset>
+              <label for="ComplainantName">
+                <span class="lead">Name
+                </span>
+            </label>
+                <input class="form-control" type="text" name="ComplainantName" id="ComplainantName">
+            </fieldset>
+          </div> 
+
+
           
           <div class="form-group" id="ComplainantContact">
             <fieldset>
@@ -288,13 +329,17 @@
                 <br>
                
                 <label for="ComplainantAddressSuburb">
-                  <span class="label">Suburb</span>
+                  <span class="label">Suburb
+                    <abbr title="(required)">*</abbr>
+                  </span>
                 </label>
                 <input type="text" name="ComplainantAddressSuburb" id="ComplainantAddressSuburb" maxlength = "50">
                 <br>
                 <br>
                 <label for="ComplainantAddressState">
-                  <span class="label">State</span>
+                  <span class="label">State
+                    <abbr title="(required)">*</abbr>
+                  </span>
                 </label>
                 <select class="input-small" name="ComplainantAddressState" id="ComplainantAddressState">
                   <option>ACT</option>
@@ -309,40 +354,44 @@
                 <br>
                 <br>
                 <label for="ComplainantAddressPostcode">
-                    <span class="label">Post code</span>
+                    <span class="label">Postcode
+                      <abbr title="(required)">*</abbr>
+                    </span>
                 </label>
                 <input type="text" name="ComplainantAddressPostCode" id="ComplainantAddressPostCode" maxlength = "4">
               </fieldset>   
-
-              <fieldset>
-                <h2>Declaration</h2>
- 
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="" id="Declaration">I declare that the information stated in this form is true and correct.
-                    <abbr title="(required)"> *</abbr></span>
-                  </label>
-                </div>
-
-              </fieldset>  
           </div>    
-    
+  
+          <div class="form-group" id="Declaration">
+            <fieldset>
+              <h2>Declaration</h2>
+
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="" id="Declaration">I declare that the information stated in this form is true and correct.
+                  <abbr title="(required)"> *</abbr></span>
+                </label>
+              </div>
+            </fieldset>  
+        </div>  
         </form> 
 
         <!-- Page buttons -->
-        <a class="qg-btn btn-default" href="7-Documents.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="9-Thankyou.html">Submit</a>&nbsp;
-        <a href="1-Home.html">Cancel</a>
-        <br>
-        <br>
+        <div class="form-group" id="NextButtons">
+          <a class="qg-btn btn-default" href="7-Documents.html">Previous</a>&nbsp;
+          <a class="qg-btn btn-primary" href="9-Thankyou.html">Submit</a>&nbsp;
+          <a href="1-Home.html">Cancel</a>
+        </div>
+          <br>
+          <br>
 
         <!-- Page dates-->  
         <div class="qg-content-footer">
           <dl>
             <dt>Last updated:</dt>
-            <dd>27 April 2020</dd>
+            <dd>26 August 2020</dd>
             <dt>Last reviewed:</dt>
-            <dd>27 April 2020</dd>
+            <dd>26 August 2020</dd>
           </dl>
         </div>
   </div>
