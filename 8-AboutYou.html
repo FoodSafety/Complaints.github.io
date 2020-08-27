@@ -223,10 +223,10 @@
         <h1>About you</h1>
         <p>Your contact details are kept confidential and will only be provided to other Government agencies as needed for their investigation into your complaint. 
         </p> 
-        <br>
         <form id="AboutYouForm">
           <div class="form-group" id="RemainAnonymous">
             <fieldset>
+              <h2>Contact details</h2>
               <label>
                 <span class="lead">Do you wish to remain anonymous </span>
                 <abbr title="(required)">*</abbr>
@@ -256,7 +256,9 @@
           </div>
 
 
+
           <div class="form-group" id="Complainant">
+           
             <fieldset>
               <label for="ComplainantName">
                 <span class="lead">Name
@@ -264,29 +266,37 @@
             </label>
                 <input class="form-control" type="text" name="ComplainantName" id="ComplainantName">
             </fieldset>
+            <br>
+
+            <span class="lead">How can we contact you? 
+              <abbr title="(required)">*</abbr>
+            </span>
+            <br>
+            <small>
+              Please provide at least your phone number or email address. During our investigation, we may contact you to ask further questions about your complaint. 
+            </small>
+            <br>
           </div> 
 
 
-          
           <div class="form-group" id="ComplainantContact">
             <fieldset>
-              <h2>Contact details</h2>
+ <!--             <h2>Contact details</h2>
               <label for="ComplainantPhone">
                 <span class="lead">How can we contact you? 
                   <abbr title="(required)">*</abbr>
                 </span>
               </label>
-              <small>
-                Please enter at least one of the following.
-              </small>
+             
               <br>
               <br>
-              
+-->              
             <label for="ComplainantPhone">
                 <span class="label">Phone number 
-                </span>
+                 </span>
               </label>
-              <input class="form-control" type="tel" name="ComplainantPhoneNumber" id="ComplainantPhoneNumber" pattern = [0-9]{10} maxlength="15">
+              <input type="text" name="ComplainantPhoneNumber" id="ComplainantPhoneNumber" maxlength = "50"> 
+              <br>
               <br>
               <label for="ComplainantEmail">
                 <span class="label">Email 
@@ -304,16 +314,17 @@
               </p>
             </div>
           </div>
-        
+          <br>
           <div class="form-group" id="ComplainantAddress">  
             <fieldset>
-                <h2>Street address</h2>
- 
-                <label for="ComplainantPhone">
-                  <span class="lead">Where do you live? 
+                  <span class="lead">Street address 
                   </span>
-                </label>
-
+                  <br>
+                  <small>
+                    Please provide at least your suburb, state and postcode. This is needed so that your complaint can be investigated by the correct enforcement agency. 
+                  </small>
+                <br>
+                <br>
                 <label for="ComplainantAddressLine1">
                   <span class="label">Address line 1 
                   </span>
