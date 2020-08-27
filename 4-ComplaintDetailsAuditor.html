@@ -206,6 +206,20 @@
             <input class="form-control" type="text" name="RetailerName" id="RetailerName">
             <br>
   
+            <label for="AuditorPhone">
+              <span class="lead">Phone number 
+              </span>
+          </label>
+          <input class="form-control" type="tel" name="AuditorPhoneNumber" id="AuditorPhoneNumber" pattern = [0-9]{10}>
+
+          <br>
+          <label for="AuditorEmail">
+              <span class="lead">Email address
+              </span>
+          </label>
+          <input class="form-control" type="email" name="AuditorEmail" id="AuditorEmail">
+          <br>
+
             <h2>Food auditor concern details</h2>
             <label for="AuditorConcernDetail">
               <span class="lead">What is your main concern?  
@@ -217,26 +231,44 @@
           <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorConcernDetail" id="AuditorConcernDetail"></textarea>
           <br>
 
-          
-          <h2>Food auditor contact details</h2>
-  
-          <label for="AuditorPhone">
-              <span class="label">Phone number 
-              </span>
-          </label>
-          <input class="form-control" type="tel" name="AuditorPhoneNumber" id="AuditorPhoneNumber" pattern = [0-9]{10}>
-
-          <br>
-          <label for="AuditorEmail">
-              <span class="label">Email address
-              </span>
-          </label>
-          <input class="form-control" type="email" name="AuditorEmail" id="AuditorEmail">
-          <br>
-
           </fieldset>
       </div>
 
+      <h2>Business type</h2>
+  
+      <div class="form-group" id="PrimaryProducer" >
+        <fieldset>
+          <label>
+            <span class="lead">Are you a primary producer? </span>
+            <abbr title="(required)">*</abbr>
+            <p> 
+              For example: a food business that makes, produces or processes any of the following foods:
+            </p>
+            <p>
+              <ul>
+                <li><strong>Smallgoods</strong> - for example, making salami</li>
+                <li><strong>Meat or meat products</strong> - for example, storage and transport of raw meat</li>
+                <li><strong>Eggs</strong> - for example, a farm producing eggs</li>
+                <li><strong>Seafood</strong> - for example, commercial fishing, wholesale seafood market</li>
+                <li><strong>Dairy</strong> - for example, milking an animal at a dairy, pastuerising milk</li>
+                <li><strong>Seeds or seed sprouts</strong> - for example, harvesting alfalfa sprouts</li>
+                </ul>
+              </p>
+          </label>
+          <ol class="questions">
+            <ul class= "choices compact">
+              <li>
+                <input type="radio" name="PrimaryProducer" id="PrimaryProducer-Yes" value="PrimaryProducer-Yes" unchecked/>
+                <label for="PrimaryProducer-Yes">Yes</label>
+              </li>
+              <li>
+                <input type="radio" name="PrimaryProducer" id="PrimaryProducer-No" value="PrimaryProducer-No" unchecked/>
+                <label for="PrimaryProducer-No">No</label>
+              </li>
+            </ul>
+          </ol> 
+        </fieldset> 
+      </div>
   
       </form> 
 
