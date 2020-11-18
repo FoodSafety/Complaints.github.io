@@ -92,6 +92,8 @@
       document.getElementById("AllergyStillProceedQuestion-no").checked = false;
       document.getElementById("ContaminationComplaintSubTypeList").value = "";
       document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-yes").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-no").checked = false;
       document.getElementById("LicenceStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-no").checked = false;
@@ -121,6 +123,8 @@
       document.getElementById("AllergyStillProceedQuestion-no").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-no").checked = false;
       document.getElementById("PracticeAnimalsStillProceedQuestion-yes").checked = false;
@@ -146,6 +150,8 @@
       document.getElementById("AllergyStillProceedQuestion-no").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-no").checked = false;
       document.getElementById("PracticeAnimalsStillProceedQuestion-yes").checked = false;
@@ -170,9 +176,11 @@
       $('div.StillProceed').hide();
       $('#' + $(this).val()).show();
       document.getElementById("AllergyStillProceedQuestion-yes").checked = false;
-      document.getElementById("AllergyStillProceedQuestion-no").checked = false;
-       document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
+      document.getElementById("AllergyStillProceedQuestion-no").checked = false;       
+      document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-no").checked = false;
       document.getElementById("PracticeAnimalsStillProceedQuestion-yes").checked = false;
@@ -199,6 +207,8 @@
       document.getElementById("ContaminationComplaintSubTypeList").value = "";
       document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-no").checked = false;
       document.getElementById("PracticeAnimalsStillProceedQuestion-yes").checked = false;
@@ -225,6 +235,8 @@
       document.getElementById("ContaminationComplaintSubTypeList").value = "";
       document.getElementById("DateMarkStillProceedQuestion-yes").checked = false;
       document.getElementById("DateMarkStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-no").checked = false;
+      document.getElementById("LabelVitaminsStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-yes").checked = false;
       document.getElementById("LicenceStillProceedQuestion-no").checked = false;
       document.getElementById("PracticeAnimalsStillProceedQuestion-yes").checked = false;
@@ -415,7 +427,7 @@
                 <option value="Auditor">Food auditor</option>
                 <option value="Poisoning">Food poisoning</option>
                 <option value="Quality">Food quality</option>
-                <option value="ForeignMatter">Foreign object in food</option>
+                <option value="ForeignMatter">Foreign object found in food</option>
                 <option value="Label">Label or packaging</option>
            
                  <option value="Other">Other</option>
@@ -727,7 +739,7 @@
             <h4><i class="fas fa-mitten"></i>&nbsp Tongs, gloves and hairnets</h4>
             <p>Food handlers do not have to use tongs or wear gloves or hairnets when handling food.
             </p>
-            <p>All food handlers must prevent the contamination of food, but how they do this is up to them. 
+            <p>All food handlers must prevent the contamination of food. 
               For example, if they wash their hands regularly, in between tasks and each time they handle food, they don’t need to wear gloves.                 
             </p>
             <span>
@@ -1037,23 +1049,41 @@
           </div>
 
           <!-- Complaint Type: Food label or packaging", Complaint SubType: "Vitamins and other supplements" -->
-          <div id="LabelVitamins" class="ComplaintSubType">
-            <div class="alert-halt" role="alert">
-              <h4><i class="fas fa-ban"></i>&nbsp; We do not investigate this complaint</h4>
-                <p>Contact the  
-                 <a href="https://www.tga.gov.au/consumers">Therapeutic Goods Administration (TGA)</a> 
-                 to make a complaint about the labelling of vitamins and other supplements, including herbal and traditional medicines.
-                </p>
-            </div>             
-            <br>
-            <br>
-
-            <!-- Page buttons -->
-            <a class="qg-btn btn-default" href="2-AcceptTerms.html">Previous</a>&nbsp;
-              <a href="1-Home.html">Cancel</a>
-            <br>
-            <br>   
-          </div>
+            <div id="LabelVitamins" class="ComplaintSubType">
+              <div class="alert alert-warning" role="alert">
+                <h4><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;Before you continue</h4>
+                <p><strong>If your complaint is about a product sold as a vitamin or supplement:</strong>
+                Contact the  
+                  <a href="https://www.tga.gov.au/consumers">Therapeutic Goods Administration (TGA)</a> 
+                  to make a complaint about the labelling of vitamins and other supplements, including herbal and traditional medicines.
+                 </p>
+                 <p><strong>If your complaint is about vitamins or supplements as an ingredient in food:</strong>
+                 Use this complaint type when you have a complaint about the label or packaing of food that contains vitamins or supplements as an ingredient.</p>
+                </div>              
+              <br>
+  
+              <div class="form-group">
+                <fieldset>
+                  <label>
+                    <span class="lead">Do you want to continue?</span>
+                    <abbr title="(required)">*</abbr>
+                  </label>
+                  <ol class="questions">
+                    <ul class= "choices compact">
+                      <li>
+                        <input type="radio" name="LabelVitaminsStillProceedQuestion" id="LabelVitaminsStillProceedQuestion-yes" value="StillProceedYes" unchecked/>
+                        <label for="LabelVitaminsStillProceedQuestion-yes">Yes</label>
+                      </li>
+                      <li><input type="radio" name="LabelVitaminsStillProceedQuestion" id="LabelVitaminsStillProceedQuestion-no" value="StillProceedNo" unchecked/>
+                        <label for="LabelVitaminsStillProceedQuestion-no">No</label>
+                      </li>
+                    </ul>
+                  </ol> 
+                </fieldset>
+              </div>
+              <br>
+    
+            </div>
 
           <!-- Complaint Type: "Food label or packaging", Complaint SubType: "Weights and other measures" -->
           <div id="LabelWeightsMeasures" class="ComplaintSubType">
