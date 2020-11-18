@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Thankyou | Queensland Government</title>
+    <title>Food complaint terms and conditions | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -58,58 +58,19 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-<!-- STYLESHEETS ADDED IN-->
-
-<!--SCRIPTS ADDED IN-->
-<!--Show an example of documents uploaded-->
-<script>
-  function downloadDocument() {
-    var complaintType = sessionStorage.getItem("complaint_type");
-    
-    if (complaintType !== null && complaintType !=='') {
-      var documentName = ("downloads/FoodComplaintExampleDownload" + complaintType + ".pdf");
-      window.open(documentName, "_blank"); 
-   }
-    else {
-      alert("Sorry, there is currently no download document available for this complaint type.")
-    }
+<!-- Style for additional red error message alert-->
+<style>
+  .alert-errormessage {
+   border-left: 5px solid #B90824;
+   background-color:#FCF4F6;
+   margin: 0px;
+   padding: 15px;
+   border-radius: 0;
+   font-weight: normal;
+   color: #000;
   }
-</script>    
+</style>
 
-<!--Show an example of documents uploaded-->
-<script>
-  function emailDocument() {
-    var complaintType = sessionStorage.getItem("complaint_type");
-    
-    if (complaintType !== null && complaintType !=='') {
-      var documentName = ("emails/FoodComplaintExampleEmail" + complaintType + ".msg");
-      window.open(documentName, "_blank"); 
-   }
-    else {
-      alert("Sorry, there is currently no example email available for this complaint type.")
-    }
-  }
-</script>    
-
-
-<!--Note for Start Survey button-->
-<script>
-  function startSurvey() {
-      alert("Selecting this start survey button will take you to an form for feedback your experience with this service'")
-   
-  }
-</script>  
-</head>
-
-<body data-qg-accessibility="true">
-
-  <section id="qg-access" role="navigation" aria-labelledby="landmark-label">
-    <h2 id="landmark-label" tabindex="0">Skip links and keyboard navigation</h2>
-    <ul>
-      <li><a id="skip-to-content" href="#qg-primary-content">Skip to content</a></li>
-      <li id="access-instructions"><a href="https://www.qld.gov.au/help/keyboard#section-aria-keyboard-navigation">Use tab and cursor keys to move around the page (more information)</a></li>
-    </ul>
-  </section>
 </head>
 
 <body data-qg-accessibility="true">
@@ -130,18 +91,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</ul>
 </section>
 
-
-    <!-- PLEASE REMOVE Message for prototype - this will not be displayed in the final design-->
-    <div class="alert alert-danger qg-noicon">
-      <header text-align="centre" vertical-align="middle">
-        <h2>Food Safety Complaint Prototype</h2>
-        </header>
-      <section text-align="centre" vertical-align="middle">
-        <p>Internal use only.  This is a prototype of the proposed online food safety complaint form.  
-        This banner will not be shown in the final product.
-        &nbsp;  &nbsp; <a class="qg-btn btn-default" href="10-ExampleOutputs.html">View example PDF documents and emails</a> </p>
-   </section>
-    </div>
 
 
 
@@ -413,8 +362,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </a>
         </li>
         <li class="qg-breadcrumb-list-item">
-          <span aria-current="page">
+          <a href="1-Home.html" class="qg-breadcrumb-list-item__link">
             Make a food safety complaint
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <span aria-current="page">
+            Food complaint terms and conditions
           </span>
         </li>
       </ol>
@@ -445,78 +399,129 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 -->
 
-<h1>Thank you for reporting your food safety complaint</h1>
-     
-<div class="alert alert-success" role="alert">
-   <div class="container">
-    <div class="row">
-      <div class="col-1"><i class="fa fa-check-circle fa-2x"></i></div>
-      <div class="col"><p>Your complaint has been successfully lodged.</p> </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-envelope fa-2x"></i></div>
-      <div class="col">A copy of the complaint details has been emailed to you.
-        <p>If you did not enter an email address, you can download a copy of your food complaint as a PDF document below.</p> 
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-tag fa-2x"></i></div>
-      <div class="col">Your reference number is <span class="lead"><strong>INV999999</strong></span></div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-search fa-2x"></i></div>
-      <div class="col">Your complaint will be investigated by:
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Agency</strong></div>
-          <div class="col">Mytown city council</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Phone</strong></div>
-          <div class="col">(07) 9999 9999</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Email</strong></div>
-          <div class="col"><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Website</strong></div>
-          <div class="col"><a href="#">www.mytown.com.au</a></div>
-        </div>
-    </div>
-    </div>
+<a class="print-content-link"><span class="fa fa-print"></span> Print</a> 
+<h1>Example error message styling</h1>
 
-    <br>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col">Please contact the above agency if you need to provide further information or follow-up on your complaint. <p>Complaints made outside standard business hours (Monday to Friday, 8am to 5pm) are actioned the next business day.</p></strong></span></div>
-    </div>
-   </div> 
-</div>
-
-
-<h2>What's next?</h2>
-<p>The responsible agency may contact you:</p>
-<ul>
-<li>If further information is needed about your complaint</li>
-<li>To arrange to collect a sample or remaining food product.</li>
-</ul>
-
-<h2>Download complaint details</h2>
-<p> You can download a copy of your food complaint as a PDF document. You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the PDF document.</p>
-<div id="DownloadDocument">
-<button id="DownloadDocument" class="qg-btn btn-secondary" onclick="downloadDocument()">Download PDF</button>
-</div> 
-
-
+<div class="alert alert-errormessage" role="alert">
+  <h2><i class="fa fa-exclamation-triangle"></i>  Please check your answers</h2>
+    <ol>
+      <li><a href="#">Name: Must be completed</a></li>
+      <li><a href="#">Email: Must be a valid email address</a></li>
+    </ol>
+</div>  
+<br>
+<br>
+<div class="preamble instructions"> 
+  <p>Who is this form for? When should they use it? What is the authority behind it?</p> 
+  <p>What will the person need? Any information that is not at hand? Do they need any reference documents? 
+    Credit cards? Identification numbers? e.g. ‘You will need your driver licence number’</p> 
+    <p>It takes about 10 minutes to complete this form.</p> 
+  </div> 
+  
+  <form action="./content-form.html" method="post" class="form">
+     <ol class="questions"> 
+       <li> 
+         <label for="name"> 
+          <span class="label">Name</span> 
+          <abbr title="(required)" class="required">*</abbr> 
+        </label> 
+        <input type="text" name="name" id="name" size="30" required="required" /> 
+      </li> 
+      <li> 
+        <label for="email"> 
+          <span class="label">Email</span> 
+          <abbr title="(required)" class="required">*</abbr> 
+          <small class="hint privacy">We will never share your email address</small> 
+        </label> <input type="email" name="email" id="email" size="40" required="required" /> 
+      </li> 
+      <li> 
+        <label for="comments2"> 
+          <span class="label">Comments</span> 
+          <abbr title="(required)" class="required">*</abbr> 
+        </label> <textarea name="comments2" id="comments2" rows="10" cols="40" required="required"></textarea> 
+      </li> 
+      <li class="section"> 
+        <fieldset> <legend> <span class="h2">Contact details</span> </legend> 
+          <ol class="questions"> 
+            <li> 
+              <label for="tel"> 
+                <span class="label">Phone</span> 
+              </label> 
+              <input type="tel" name="tel" id="tel" size="20" value="" /> 
+            </li> 
+            <li class="atomic group"> 
+              <fieldset> 
+                <legend> <span class="label">Postal address</span> </legend> 
+                <ol class="questions"> 
+                  <li> 
+                    <label for="streetaddress1"> 
+                      <span class="label">Address line 1</span> 
+                      <abbr title="(required)" class="required">*</abbr> 
+                    </label> 
+                    <input type="text" name="streetaddress1" id="streetaddress1" size="20" value="" required="required" /> 
+                  </li> 
+                  <li> 
+                    <label for="streetaddress2"> 
+                      <span class="label">Address line 2</span> 
+                    </label> 
+                    <input type="text" name="streetaddress2" id="streetaddress2" size="20" value="" /> 
+                  </li> 
+                  <li> 
+                    <label for="streetaddress3"> 
+                      <span class="label">Address line 3</span> 
+                    </label> 
+                    <input type="text" name="streetaddress3" id="streetaddress3" size="20" value="" /> 
+                  </li> 
+                  <li class="group"> 
+                    <ol class="questions compact"> <li> 
+                      <label for="town"> 
+                        <span class="label">Town, city or suburb</span> 
+                        <abbr title="(required)" class="required">*</abbr> 
+                      </label> 
+                      <input type="text" name="town" id="town" size="20" value="" required="required" /> 
+                    </li> 
+                    <li> 
+                      <label for="state"> 
+                        <span class="label">State</span> 
+                        <abbr title="(required)" class="required">*</abbr> 
+                      </label> 
+                      <input type="text" name="state" id="state" size="5" value="QLD" required="required" /> 
+                    </li> 
+                    <li> <label for="postcode"> 
+                      <span class="label">Postcode</span> 
+                      <abbr title="(required)" class="required">*</abbr> 
+                    </label> 
+                    <input type="text" name="postcode" id="postcode" size="5" value="" required="required" /> 
+                  </li> 
+                </ol> 
+              </li> 
+              </ol> 
+            </fieldset> 
+          </li> 
+        </ol> 
+      </fieldset> 
+    </li> 
+    <li class="footer"> 
+      <div class="instructions"></div> 
+      <p>Any final instructions go here. What should the customer expect after submitting? 
+        Who will look at their response? Will they receive any notification when something happens? 
+        How long should they wait before following up through other channels? How do they follow up?
+      </p> 
+    </div> 
+    <ul class="actions"> 
+      <li> 
+        <strong> <input type="submit" value="Send message" /> </strong> 
+      </li> 
+    </ul> 
+  </li> 
+</ol> 
+</form>
 <div class="qg-content-footer">
   <dl>
       <dt>Last updated:</dt>
-      <dd>04 August 2020</dd>
+      <dd>03 August 2020</dd>
       <dt>Last reviewed:</dt>
-      <dd>04 August 2020</dd>
+      <dd>03 August 2020</dd>
   </dl>
 
 
@@ -723,6 +728,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
- 
-  
