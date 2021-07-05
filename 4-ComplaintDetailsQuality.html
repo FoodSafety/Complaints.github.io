@@ -90,6 +90,20 @@ $(document).ready(function(){
 });
 </script> 
 
+!-- Script to set HasFoodSamples session values and go to next page -->
+<script>
+  function nextPage() {
+    // Save the has food samples value
+    var hasFoodSamples = $("input[name='HasFoodSamples']:checked").val();
+    sessionStorage.setItem("hasFoodSamples", hasFoodSamples);
+    //alert("HasFoodSamples " + hasFoodSamples);
+
+    // Navigate to the retailer page
+      var pageName = "5-Retailer.html";
+      window.open(pageName, "_self");
+  }
+</script>
+
 </head>
 
 <body data-qg-accessibility="true">
@@ -195,7 +209,7 @@ $(document).ready(function(){
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
         <h1>Complaint Details</h1>
-        
+        <br>
        <!-- <h3>Food quality complaint</h3>
         <h4 id="ComplaintSubType">&lt;&lt;<italic></italic>&gt;&gt;</h4>
        --> 
@@ -237,16 +251,18 @@ $(document).ready(function(){
               <br>
               <label for="DateFoodBought">
                 <span class="lead">When did you buy or receive the food?  
-                <abbr title="(required)">*</abbr></span>
               </label>
               <input type="date" id="DateFoodBought" name="DateFoodBought">
-
+<!--
               <br>
               <br>
               <label>
                 <span class="lead">Do you have a receipt or proof of purchase?</span>
                 <abbr title="(required)">*</abbr>
               </label>
+              <small class="hint"> 
+                For example: receipt, bank statement or photograph.
+              </small>
               <ol class="questions">
                 <ul class= "choices compact">
                   <li>
@@ -257,12 +273,9 @@ $(document).ready(function(){
                     <input type="radio" name="HasReceipt" id="HasReceipt-No" value="HasReceipt-No" unchecked/>
                     <label for="HasReceipt-No">No</label>
                   </li>
-                  <li>
-                    <input type="radio" name="HasReceipt" id="HasReceipt-NA" value="HasReceipt-NA" unchecked/>
-                    <label for="HasReceipt-NA">Not applicable</label>
-                  </li>
                 </ul>
               </ol> 
+    -->
             </fieldset>
          </div> 
 
@@ -278,15 +291,15 @@ $(document).ready(function(){
               <ul class= "choices compact">
                 <li>
                   <input type="radio" name="HasFoodSamples" id="HasFoodSamples-Yes" value="HasFoodSamples-Yes" unchecked/>
-                  <label for="HasSamples-Yes">Yes</label>
+                  <label for="HasFoodSamples-Yes">Yes</label>
                 </li>
                 <li>
                   <input type="radio" name="HasFoodSamples" id="HasFoodSamples-No" value="HasFoodSamples-No" unchecked/>
-                  <label for="HasSamples-No">No</label>
+                  <label for="HasFoodSamples-No">No</label>
                 </li>
                 <li>
                   <input type="radio" name="HasFoodSamples" id="HasFoodSamples-NA" value="HasFoodSamples-NA" unchecked/>
-                  <label for="HasSamples-NA">Not applicable</label>
+                  <label for="HasFoodSamples-NA">Not applicable</label>
                 </li>
               </ul>
             </ol>              
@@ -299,8 +312,7 @@ $(document).ready(function(){
               <p>It is important the food package or leftover food is stored safely in case an environmental health officer needs the items for further investigation.  
               </p>
               <ol>
-                <li>Keep the food in the original packaging (if available)</li>
-                <li>Place the food in a container that you can tightly seal</li>
+                <li>Place the food (in its packaging if available) in a container that you can tightly seal</li>
                 <li>Follow the manufacturer’s instructions to see if the leftover food should be stored in the cupboard, fridge or freezer.</li>
               </ol>
             </div>
@@ -311,7 +323,7 @@ $(document).ready(function(){
 
         <!-- Page buttons -->
         <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="5-Retailer.html">Next</a>&nbsp;
+        <button type="button" class="qg-btn btn-primary" onclick="nextPage()">Next</button>&nbsp;
         <a href="1-Home.html">Cancel</a>
         <br>
         <br>
@@ -320,10 +332,10 @@ $(document).ready(function(){
         <div class="qg-content-footer">
           <dl>
             <dt>Last updated:</dt>
-            <dd>05 March 2020</dd>
+            <dd>27 April 2020</dd>
             <dt>Last reviewed:</dt>
-            <dd>05 March 2020</dd>
-       <!-- Page dates-->   </dl>
+            <dd>27 April 2020</dd>
+          </dl>
       </div>
 </div>
   

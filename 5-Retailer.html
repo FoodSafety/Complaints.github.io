@@ -64,16 +64,34 @@
 <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg="nest"></script>
 <link href="css/QH-checkbox.css" rel="stylesheet">
 
+<!-- Style for additional red alert-->
+<style>
+  .alert-halt {
+   border-left: 5px solid #B90824;
+   background-color:#ffeded;
+   margin: 0px;
+   padding: 15px;
+   border-radius: 0;
+   font-weight: normal;
+   color: #000;
+  }
+ </style> 
+
 <!-- SCRIPTS ADDED IN -->
 <script type="text/javascript">
   $(document).ready(function(){
       $("#RetailerSearch").hide();
+      $("#RetailerSearchNoResults").hide();
+      $("#RetailerSearchTooManyResults").hide();
       $("#RetailerSearchResults").hide();
       $("#RetailerEnterDetails").hide();
       $("#Website").hide();
+      $("#RetailerContactDetails").hide();
       $("#PrimaryProducer").hide();
+      $("#GovernmentFacility").hide();
       $("#RetailerContacted").hide();
       $("#RetailerResponse").hide();
+      $("#NextButtons").hide();
   });
 </script>
 
@@ -83,47 +101,121 @@
     $(document).ready(function(){
         $('#BusinessType').click(function(){
           $("#RetailerSearch").hide();
+          $("#RetailerSearchNoResults").hide();
           $("#RetailerSearchResults").hide();
+          $("#RetailerSearchTooManyResults").hide();
           $("#RetailerEnterDetails").hide();
           $("#Website").hide();
+          $("#RetailerContactDetails").hide();
           $("#PrimaryProducer").hide();
+          $("#GovernmentFacility").hide();
           $("#RetailerContacted").hide();
           $("#RetailerResponse").hide();
+          $("#NextButtons").hide();
+          document.getElementById("SearchResults-1").checked = false;
+          document.getElementById("SearchResults-2").checked = false;
+          document.getElementById("SearchResults-3").checked = false;
+          document.getElementById("SearchResults-4").checked = false;
+          document.getElementById("SearchResults-5").checked = false;
+          document.getElementById("RetailerContacted-Yes").checked = false;
+          document.getElementById("RetailerContacted-No").checked = false;
+          document.getElementById("GovernmentFacility-Yes").checked = false;
+          document.getElementById("GovernmentFacility-No").checked = false;
+          document.getElementById("PrimaryProducer-Yes").checked = false;
+          document.getElementById("PrimaryProducer-No").checked = false;
+      
           var selectedvalue = $("input[name='BusinessType']:checked").val();
           //alert("Selected value is: " + selectedvalue);
           switch (selectedvalue) {
             case "RetailerLocation-Store":
               $("#RetailerSearch").show();
-              $("#RetailerSearchResults").show();
               break;
             case "RetailerLocation-FoodTruck":
               $("#RetailerEnterDetails").show();
+              $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
+              $("#RetailerContacted").show();
+              $("#NextButtons").show();
               break;
             case "RetailerLocation-MarketStall":
               $("#RetailerEnterDetails").show();
-              break;
-            case "RetailerLocation-Hospital":
-              $("#RetailerSearch").show();
-              $("#RetailerSearchResults").show();
-              break;
-            case "RetailerLocation-School":
-              $("#RetailerSearch").show();
-              $("#RetailerSearchResults").show();
+              $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
+              $("#RetailerContacted").show();
+              $("#NextButtons").show();
               break;
             case "RetailerLocation-Other":
               $("#RetailerEnterDetails").show();
+              $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
+              $("#RetailerContacted").show();
+              $("#NextButtons").show();
               break;
               case "RetailerLocation-Website":
               $("#Website").show();
+              $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
+              $("#RetailerContacted").show();
+              $("#NextButtons").show();
               break;            
             default:
               $("#RetailerEnterDetails").show();
+              $("#GovernmentFacility").show();
+              $("#PrimaryProducer").hide();
+             $("#RetailerContacted").show();
+              $("#NextButtons").show();
           }
-          $("#PrimaryProducer").show();
-          $("#RetailerContacted").show();
         });
     });
   </script> 
+
+<!-- Script for on selecting a food business from the search results-->
+<!--
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('input[type="radio"]').click(function(){
+        var selectedvalue = $(this).val(); 
+          $("#RetailerContactDetails").show();
+          $("#Website").hide();
+          $("#RetailerEnterDetails").hide();
+          $("#PrimaryProducer").hide();
+          $("#GovernmentFacility").show();
+          $("#RetailerContacted").show();
+          $("#NextButtons").show();
+      });
+  });
+</script> 
+-->
+<!-- Script for on selecting a food business from the search results-->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#RetailerSearchResults').click(function(){
+          $("#RetailerContactDetails").show();
+          $("#Website").hide();
+          $("#RetailerEnterDetails").hide();
+          $("#PrimaryProducer").hide();
+          $("#GovernmentFacility").show();
+          $("#RetailerContacted").show();
+          $("#NextButtons").show();
+      });
+  });
+</script> 
+
+<!--Show or hide page sections based on selecting whether State Government facility-->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#GovernmentFacility').click(function(){
+        var selectedvalue = $("input[name='GovernmentFacility']:checked").val();
+        //alert("Selected value is: " + selectedvalue);
+        if (selectedvalue == "GovernmentFacility-Yes") {
+          $('#PrimaryProducer').hide();
+        }
+        else {
+          $('#PrimaryProducer').show();
+        }
+      });
+  });
+</script> 
 
 <!--Show or hide page sections based on whether retailer was contacted-->
 <script type="text/javascript">
@@ -140,6 +232,175 @@
       });
   });
 </script> 
+
+
+<!-- Script to show no search results found -->
+<script>
+  function showNoResults() {
+    $("#RetailerSearchNoResults").show();
+    $("#RetailerSearchResults").hide();
+    $("#RetailerSearchTooManyResults").hide();
+    $("#RetailerEnterDetails").hide();
+    $("#Website").hide();
+    $("#RetailerContactDetails").hide();
+    $("#PrimaryProducer").hide();
+    $("#GovernmentFacility").hide();
+    $("#RetailerContacted").hide();
+    $("#RetailerResponse").hide();
+    $("#NextButtons").hide();
+
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
+}
+</script>
+
+<!-- Script to show 1 to 50 search results  -->
+<script>
+  function showResults() {
+    $("#RetailerSearchNoResults").hide();
+    $("#RetailerSearchResults").show();
+    $("#RetailerSearchTooManyResults").hide();
+    $("#RetailerEnterDetails").hide();
+    $("#Website").hide();
+    $("#RetailerContactDetails").hide();
+    $("#PrimaryProducer").hide();
+    $("#GovernmentFacility").hide();
+    $("#RetailerContacted").hide();
+    $("#RetailerResponse").hide();
+    $("#NextButtons").hide();
+
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
+}
+</script>
+
+<!-- Script to show too many search results found -->
+<script>
+  function showTooManyResults() {
+    $("#RetailerSearchNoResults").hide();
+    $("#RetailerSearchResults").hide();
+    $("#RetailerSearchTooManyResults").show();
+    $("#RetailerEnterDetails").hide();
+    $("#Website").hide();
+    $("#RetailerContactDetails").hide();
+    $("#PrimaryProducer").hide();
+    $("#GovernmentFacility").hide();
+    $("#RetailerContacted").hide();
+    $("#RetailerResponse").hide();
+    $("#NextButtons").hide();
+
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
+}
+</script>
+
+<!-- Script to enter retailer details when retailer not found in search -->
+<script>
+  function showRetailerNotFound() {
+    $("#RetailerContactDetails").hide();
+    $("#RetailerEnterDetails").show();
+    $("#GovernmentFacility").show();
+    $("#PrimaryProducer").hide();
+    $("#RetailerContacted").show();
+    $("#NextButtons").show();   
+    $("#RetailerResponse").hide();
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;  
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;  
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;
+ }
+</script>
+
+<!-- Script to reset search -->
+<script>
+  function resetSearch() {
+    $("#RetailerSearchResults").hide();
+    $("#RetailerSearchNoResults").hide();
+    $("#RetailerSearchTooManyResults").hide();
+    $("#RetailerContactDetails").hide();
+    $("#RetailerEnterDetails").hide();
+    $("#Website").hide();
+    $("#PrimaryProducer").hide();
+    $("#GovernmentFacility").hide();
+    $("#RetailerContacted").hide();
+    $("#RetailerResponse").hide();
+    $("#NextButtons").hide();
+    document.getElementById("SearchResults-1").checked = false;
+    document.getElementById("SearchResults-2").checked = false;
+    document.getElementById("SearchResults-3").checked = false;
+    document.getElementById("SearchResults-4").checked = false;
+    document.getElementById("SearchResults-5").checked = false;  
+    document.getElementById("RetailerContacted-Yes").checked = false;
+    document.getElementById("RetailerContacted-No").checked = false;  
+    document.getElementById("GovernmentFacility-Yes").checked = false;
+    document.getElementById("GovernmentFacility-No").checked = false;
+    document.getElementById("PrimaryProducer-Yes").checked = false;
+    document.getElementById("PrimaryProducer-No").checked = false;    
+}
+</script>
+
+<!-- Script for on click of pagination for search results-->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#Pagination').click(function(){
+        alert("Clicking the pagination buttons will load a new set of search results. This prototype does not include that functionality."); 
+      });
+  });
+</script>
+
+<!-- Script to determine next page to display based on HasFoodSamples session value -->
+<script>
+  function nextPage() {
+   var hasFoodSamples = sessionStorage.getItem("hasFoodSamples");
+
+    
+   if(hasFoodSamples == "HasFoodSamples-Yes") {
+      // Navigate to the Manufacturer details page
+      var pageName = ("6-Manufacturer.html");
+   }
+   else {
+      // Navigate to the About you details page
+      var pageName = ("8-AboutYou.html"); 
+   }
+  
+  window.open(pageName, "_self"); 
+  }
+</script>
+
 
 </head>
 
@@ -245,9 +506,9 @@
 
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
-        <h1>Food retailer</h1>
-        <p>Please tell us about the food business that you bought the food from or where you noticed the food safety concern.</p>        
-
+        <h1>Food business</h1>
+        <br>
+        
         <label>
           <span class="lead">Where does the food business sell or provide the food from? </span>
           <abbr title="(required)">*</abbr>
@@ -261,8 +522,8 @@
                         <div class="icon">
                         <i class="fas fa-store-alt fa-4x"></i>
                         </div>
-                        <label for="RetailerLocation-Store" class="radio-tile-label">Shop or restaurant</label>
-                    </div>
+                        <label for="RetailerLocation-Store" class="radio-tile-label">Shop with a fixed address</label>
+                      </div>
                 </div>
                 <div class="input-container">
                     <input id="RetailerLocation-FoodTruck" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-FoodTruck"/>
@@ -279,10 +540,9 @@
                     <div class="icon">
                         <i class="fas fa-store fa-4x"></i>
                     </div>
-                    <label for="RetailerLocation-MarketStall" class="radio-tile-label">Market stall</label>
+                    <label for="RetailerLocation-MarketStall" class="radio-tile-label">Temporary Market stall</label>
                     </div>
                 </div>
-
                  <div class="input-container">
                     <input id="RetailerLocation-Website" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-Website"/>
                     <div class="radio-tile">
@@ -292,26 +552,6 @@
                     <label for="RetailerLocation-Website" class="radio-tile-label">Online store</label>
                     </div>
                 </div>  
- 
-                <div class="input-container">
-                    <input id="RetailerLocation-Hospital" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-Hospital"/>
-                    <div class="radio-tile">
-                    <div class="icon">
-                        <i class="fas fa-hospital-alt fa-4x"></i>
-                    </div>
-                    <label for="RetailerLocation-Hospital" class="radio-tile-label">Public hospital</label>
-                    </div>
-                </div>
-                <br>
-                <div class="input-container">
-                    <input id="RetailerLocation-School" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-School"/>
-                    <div class="radio-tile">
-                    <div class="icon">
-                        <i class="fas fa-school fa-4x"></i>
-                    </div>
-                    <label for="RetailerLocation-School" class="radio-tile-label">State school</label>
-                    </div>
-                </div>
                 <br>
                 <div class="input-container">
                   <input id="RetailerLocation-Other" class="radio-button" type="radio" name="BusinessType" value="RetailerLocation-Other"/>
@@ -328,77 +568,69 @@
 
 
         <form id="RetailerForm">
-            <!--            <div class="form-group" id="RetailerLocation">
-            <fieldset>
-              <label>
-                <span class="lead">Where does the food business sell or provide the food from? </span>
-                <abbr title="(required)">*</abbr>
-              </label>
-              <ol class="questions">
-                <ul class= "choices">
-                  <li>
-                    <input type="radio" name="RetailerLocation" id="RetailerLocation-Fixed" value="RetailerLocation-Fixed" unchecked/>
-                    <label for="RetailerLocation-Fixed">Fixed location</label>
-                    <small class="hint"> 
-                      For example: a shop, restuarant, café.
-                    </small>
-                  </li>
-                  <li><input type="radio" name="RetailerLocation" id="RetailerLocation-Temporary" value="RetailerLocation-Temporary" unchecked/>
-                    <label for="RetailerLocation-Temporary">Temporary location</label>
-                    <small class="hint"> 
-                      For example: food truck, market stall.
-                    </small>
-                  </li>
-                  <li>
-                    <input type="radio" name="RetailerLocation" id="RetailerLocation-QLDFacility" value="RetailerLocation-QLDFacility" unchecked/>
-                    <label for="RetailerLocation-QLDFacility">Queensland State Government facility</label>
-                    <small class="hint"> 
-                      For example: a public hospital, state school.
-                    </small>
-                  </li>
-                  <li><input type="radio" name="RetailerLocation" id="RetailerLocation-Vending" value="RetailerLocation-Vending" unchecked/>
-                    <label for="RetailerLocation-Vending">Vending machine</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset>
-
-          </div>
-            -->
-
           <div class="form-group" id="RetailerSearch">
-            <h3>Search food retailers</h3>
+            <h2>Search online for food business</h2>
             <div class="alert alert-info" role="alert">
                 <label for="RetailerName">
                   <span class="label">Business name or type 
                   <abbr title="(required)">*</abbr></span>
                   </span>
                 </label>
+                <small class="hint"> 
+                  If you do not know the name of the food business, then you can search based on the type of business (e.g.: sushi, fish and chips, bakery)
+                </small>               
                 <input type="text" name="RetailerName" id="RetailerName" size=250>
+                <br>
+                <br>
                 <label for="RetailerSuburb">
                   <span class="label">Suburb or postcode
                   <abbr title="(required)">*</abbr></span>
                   </span>
                 </label>
                 <input type="text" name="RetailerSuburb" id="RetailerSuburb" size=250>
-               <br>            
+               <br>    
+               <br>        
               <div id="SearchforRetailer">
-                <button class="qg-btn btn-primary">Search</button>&nbsp;
-                <button class="qg-btn btn-default">Reset</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Search</button>&nbsp;
+                <button type="button" class="qg-btn btn-default" onclick="resetSearch()">Reset</button>&nbsp;
               </div>
           </div>
         </div>
-          
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span>
+                  <h1 class="modal-title" id="exampleModalLongTitle">Example Google search results</h1>
+                  <small>Note: This pop-up has been added in for the prototype, and will not be included in the final product.</small>
+                </span>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                 <p>How many results you want to show as an example of the Google search functionality?</p>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="showNoResults()" data-dismiss="modal"> 0 </button>
+                <button type="button" class="btn btn-secondary" onclick="showResults()" data-dismiss="modal"> Between 1 and 50</button>
+                <button type="button" class="btn btn-secondary" onclick="showTooManyResults()" data-dismiss="modal"> > 50</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
           <div class="form-group" id="RetailerSearchResults">
             <h2>Search results</h2>  
-            <p class="lead">19 results were found.</p>
-            <br>
-
+            <p class="lead">19 results were found</p>
+     
             <table class="table" width="60%">
               <thead>
-                <td>Select</td>
-                <td>Business name and address</td>
+                <td><strong>Select</strong></td>
+                <td><strong>Business name and address</strong></td>
               </thead>
               <tbody>
                 <tr>
@@ -425,7 +657,7 @@
                 </tr>
                 <tr>
                   <td>                      
-                    <input type="radio" name="SearchResults" id="SearchResults-2" value="SearchResults-2" unchecked/>
+                    <input type="radio" name="SearchResults" id="SearchResults-3" value="SearchResults-3" unchecked/>
                   </td>
                   <td colspan="2">
                     <label for="SearchResults-2">Big Trevs Pies and Bakery</label>
@@ -436,7 +668,7 @@
                 </tr>
                 <tr>
                   <td>                      
-                    <input type="radio" name="SearchResults" id="SearchResults-2" value="SearchResults-2" unchecked/>
+                    <input type="radio" name="SearchResults" id="SearchResults-4" value="SearchResults-4" unchecked/>
                   </td>
                   <td colspan="2">
                     <label for="SearchResults-2">Jasper Bakery House</label>
@@ -447,7 +679,7 @@
                 </tr>
                 <tr>
                   <td>                      
-                    <input type="radio" name="SearchResults" id="SearchResults-2" value="SearchResults-2" unchecked/>
+                    <input type="radio" name="SearchResults" id="SearchResults-5" value="SearchResults-5" unchecked/>
                   </td>
                   <td colspan="2">
                     <label for="SearchResults-2">Le Petite Treats</label>
@@ -459,7 +691,7 @@
                 <tr>
                   <td colspan="2">
                     <nav aria-label="Page navigation example">
-                      <ul class="pagination">
+                      <ul class="pagination" id="Pagination">
                         <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
                         <li class="page-item active" aria-current="page"><a class="page-link" href="#">1<span class="sr-only">(current)</span></a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -468,37 +700,59 @@
                       </ul>
                     </nav>
                   </td>
-                  <td>
-                    <button class="qg-btn btn-default">Retailer not found?</button>
+                  <td align-right>
+                    <button type="button" class="qg-btn btn-default" onclick="showRetailerNotFound()">Business not found?</button>&nbsp;
                   </td>
                 </tr>
               </tbody>
             </table>
-            
+          </div>
+
+          <div class="form-group" id="RetailerSearchNoResults">
+            <h2>Search results</h2>  
+            <p class="lead">0 results were found</p>
+            <div class="alert-halt" role="alert">
+              <p>No results were found matching the business name and suburb. Please check the name and suburb or postcode you have entered and try again.</p>
+              <p>If you believe the details you have entered are correct, then the business name and the suburb details may not exist in our listing.  
+                Please select to manually add the food business name and address details.</p>
+              <button type="button" class="qg-btn btn-default" onclick="showRetailerNotFound()">Business not found?</button>&nbsp;
+            </div>     
+          </div>
+
+          <div class="form-group" id="RetailerSearchTooManyResults">
+            <h2>Search results</h2>  
+            <p class="lead">122 results were found</p>
+            <div class="alert alert-warning" role="alert">
+              <p>More than 50 results were found for this search term.  Please refine your search to continue. </p>
+              <p>If you are unable to find the then the food business, then please select to manually add the food business name and address details.
+              </p>
+              <button type="button" class="qg-btn btn-default" onclick="showRetailerNotFound()">Business not found?</button>&nbsp;
+            </div>
+          </div>
+
+          <div class="form-group" id="RetailerContactDetails">
             <label for="RetailerPhone">
               <span class="label">Phone number 
               </span>
             </label>
-            <input class="form-control" type="tel" name="RetailerPhoneNumber" id="RetailerPhoneNumber" pattern = [0-9]{10}>
-
+            <input class="form-control" type="tel" name="RetailerPhoneNumber" id="RetailerPhoneNumber" value="07 9999 9999" pattern = [0-9]{10}>
             <br>
             <label for="RetailerWebsite">
               <span class="label">Website address
               </span>
             </label>
-            <input class="form-control" type="url" name="RetailerWebsite" id="RetailerWebsite">
-            <br>
+            <input class="form-control" type="url" name="RetailerWebsite" id="RetailerWebsite" value="www.websitereturnedfromGoogleSearch@businessname.com">
           </div>
 
           <div class="form-group" id="RetailerEnterDetails">
-            <h2>Enter retailer details</h2>
+            <h2>Enter food business details</h2>
             <fieldset>
                <label for="RetailerName">
-                <span class="lead">Business Name 
+                <span class="lead">Food business name 
                   <abbr title="(required)">*</abbr>
                 </span>
                   <small class="hint"> 
-                    Please provide the name the food business that you bought the food from or where you noticed the food safety concern.  
+                    Please provide the name the food business that you bought the food from, or where you noticed the food safety concern.  
                   </small>
                 </label>
                 <input class="form-control" type="text" name="RetailerName" id="RetailerName">
@@ -566,7 +820,8 @@
                   <span class="label">Additional location details 
                   </span>
                   <small class="hint"> 
-                    Provide as much information about the where the retailer is or was located.  Enter any additional location details to describe where the food business is physically located.
+                    Enter any additional details that you think will help us to find the food business and where they are selling food.
+                     This could include a business licence number, a rego number for a food truck, or the name of the markets.
                   </small>
                 <textarea class="form-control" rows="5" style="min-width: 100%" name="QualityConcern" id="QualityConcern"></textarea>
   
@@ -590,8 +845,10 @@
 
           <div class="form-group" id="Website">
             <fieldset> 
-            <label for="RetailerWebsite">
+              <h2>Enter food business details</h2>
+              <label for="RetailerWebsite">
               <span class="label">Website address
+                <abbr title="(required)">*</abbr>
               </span>
             </label>
             <input class="form-control" type="url" name="RetailerWebsite" id="RetailerWebsite">
@@ -600,24 +857,49 @@
           </div>
 
 
+          <div class="form-group" id="GovernmentFacility" >
+            <fieldset>
+              <label>
+                <span class="lead">Is your complaint about food that is provided by a Queensland State Government facility? </span>
+                <abbr title="(required)">*</abbr>
+                <p> 
+                  For example: state school or public hospital
+                </p>
+              </label>
+              <ol class="questions">
+                <ul class= "choices compact">
+                  <li>
+                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-Yes" value="GovernmentFacility-Yes" unchecked/>
+                    <label for="GovernmentFacility-Yes">Yes</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="GovernmentFacility" id="GovernmentFacility-No" value="GovernmentFacility-No" unchecked/>
+                    <label for="GovernmentFacility-No">No</label>
+                  </li>
+                </ul>
+              </ol> 
+            </fieldset> 
+          </div>
+
+ 
           <div class="form-group" id="PrimaryProducer" >
             <fieldset>
               <label>
-                <span class="lead">Is this complaint about a primary producer? </span>
+                <span class="lead">Is your complaint about a primary producer? </span>
                 <abbr title="(required)">*</abbr>
-                <small class="hint"> 
-                  Select yes if your complaint relates <strong>only</strong> to the production and processing of any of the following foods:
-                </small>
-                <small>
+                <p> 
+                  Select yes, if your complaint relates <strong>only</strong> to a food business that makes, produces or processes any of the following foods:
+                </p>
+                <p>
                   <ul>
                     <li><strong>Smallgoods</strong> - for example, making salami</li>
-                    <li><strong>Meat or meat products</strong> - for example, storage and transport of raw meat</li>
+                    <li><strong>Meat or meat products</strong> - for example, retail butchers, storage and transport of raw meat</li>
                     <li><strong>Eggs</strong> - for example, a farm producing eggs</li>
                     <li><strong>Seafood</strong> - for example, commercial fishing, wholesale seafood market</li>
-                    <li><strong>Dairy</strong> - for example, milking an animal at a dairy, pastuerising milk</li>
+                    <li><strong>Dairy</strong> - for example, processing milk, cheese, yoghurt, ice cream</li>
                     <li><strong>Seeds or seed sprouts</strong> - for example, harvesting alfalfa sprouts</li>
                     </ul>
-                </small>
+                  </p>
               </label>
               <ol class="questions">
                 <ul class= "choices compact">
@@ -627,17 +909,17 @@
                   </li>
                   <li>
                     <input type="radio" name="PrimaryProducer" id="PrimaryProducer-No" value="PrimaryProducer-No" unchecked/>
-                    <label for="PrimaryProducer-Yes">No</label>
+                    <label for="PrimaryProducer-No">No</label>
                   </li>
                 </ul>
               </ol> 
             </fieldset> 
           </div>
-
+          
           <div class="form-group" id="RetailerContacted">
             <fieldset>
               <label>
-                <span class="lead">Did you contact the retailer about your concerns?</span>
+                <span class="lead">Did you contact the food business about your concerns?</span>
                 <abbr title="(required)">*</abbr>
               </label>
               <ol class="questions">
@@ -648,7 +930,7 @@
                   </li>
                   <li>
                     <input type="radio" name="RetailerContacted" id="RetailerContacted-No" value="RetailerContacted-No" unchecked/>
-                    <label for="RetailerContacted-Yes">No</label>
+                    <label for="RetailerContacted-No">No</label>
                   </li>
                 </ul>
               </ol> 
@@ -658,7 +940,7 @@
 
           <div class="form-group" id="RetailerResponse">
             <label for="RetailerResponse">
-              <span class="lead">What was the retailer’s response? 
+              <span class="lead">What was their response? 
               <abbr title="(required)">*</abbr></span>
             </label>
             <textarea class="form-control" rows="5" style="min-width: 100%" name="RetailerResponseDetails" id="RetailerResponseDetails"></textarea>
@@ -668,20 +950,21 @@
         </form> 
 
         <!-- Page buttons -->
-        <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
-        <a class="qg-btn btn-primary" href="6-Manufacturer.html">Next</a>&nbsp;
-        <a href="1-Home.html">Cancel</a>
-        <br>
-        <br>
-
+        <div class="form-group" id="NextButtons">
+          <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
+          <button type="button" class="qg-btn btn-primary" onclick="nextPage()">Next</button>&nbsp;
+          <a href="1-Home.html">Cancel</a>
+          <br>
+          <br>
+        </div>
          <!-- Page dates-->  
          <div class="qg-content-footer">
           <dl>
             <dt>Last updated:</dt>
-            <dd>05 March 2020</dd>
+            <dd>28 April 2020</dd>
             <dt>Last reviewed:</dt>
-            <dd>05 March 2020</dd>
-       <!-- Page dates-->   </dl>
+            <dd>28 April 2020</dd>
+          </dl>
       </div>
   </div>
     

@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Thankyou | Queensland Government</title>
+    <title>Food complaint privacy and security | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -58,58 +58,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-<!-- STYLESHEETS ADDED IN-->
 
-<!--SCRIPTS ADDED IN-->
-<!--Show an example of documents uploaded-->
-<script>
-  function downloadDocument() {
-    var complaintType = sessionStorage.getItem("complaint_type");
-    
-    if (complaintType !== null && complaintType !=='') {
-      var documentName = ("downloads/FoodComplaintExampleDownload" + complaintType + ".pdf");
-      window.open(documentName, "_blank"); 
-   }
-    else {
-      alert("Sorry, there is currently no download document available for this complaint type.")
-    }
-  }
-</script>    
-
-<!--Show an example of documents uploaded-->
-<script>
-  function emailDocument() {
-    var complaintType = sessionStorage.getItem("complaint_type");
-    
-    if (complaintType !== null && complaintType !=='') {
-      var documentName = ("emails/FoodComplaintExampleEmail" + complaintType + ".msg");
-      window.open(documentName, "_blank"); 
-   }
-    else {
-      alert("Sorry, there is currently no example email available for this complaint type.")
-    }
-  }
-</script>    
-
-
-<!--Note for Start Survey button-->
-<script>
-  function startSurvey() {
-      alert("Selecting this start survey button will take you to an form for feedback your experience with this service'")
-   
-  }
-</script>  
-</head>
-
-<body data-qg-accessibility="true">
-
-  <section id="qg-access" role="navigation" aria-labelledby="landmark-label">
-    <h2 id="landmark-label" tabindex="0">Skip links and keyboard navigation</h2>
-    <ul>
-      <li><a id="skip-to-content" href="#qg-primary-content">Skip to content</a></li>
-      <li id="access-instructions"><a href="https://www.qld.gov.au/help/keyboard#section-aria-keyboard-navigation">Use tab and cursor keys to move around the page (more information)</a></li>
-    </ul>
-  </section>
 </head>
 
 <body data-qg-accessibility="true">
@@ -130,18 +79,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</ul>
 </section>
 
-
-    <!-- PLEASE REMOVE Message for prototype - this will not be displayed in the final design-->
-    <div class="alert alert-danger qg-noicon">
-      <header text-align="centre" vertical-align="middle">
-        <h2>Food Safety Complaint Prototype</h2>
-        </header>
-      <section text-align="centre" vertical-align="middle">
-        <p>Internal use only.  This is a prototype of the proposed online food safety complaint form.  
-        This banner will not be shown in the final product.
-        &nbsp;  &nbsp; <a class="qg-btn btn-default" href="10-ExampleOutputs.html">View example PDF documents and emails</a> </p>
-   </section>
-    </div>
 
 
 
@@ -413,8 +350,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </a>
         </li>
         <li class="qg-breadcrumb-list-item">
-          <span aria-current="page">
+          <a href="1-Home.html" class="qg-breadcrumb-list-item__link">
             Make a food safety complaint
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <span aria-current="page">
+            Food complaint privacy and security statement
           </span>
         </li>
       </ol>
@@ -445,78 +387,118 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 -->
 
-<h1>Thank you for reporting your food safety complaint</h1>
-     
-<div class="alert alert-success" role="alert">
-   <div class="container">
-    <div class="row">
-      <div class="col-1"><i class="fa fa-check-circle fa-2x"></i></div>
-      <div class="col"><p>Your complaint has been successfully lodged.</p> </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-envelope fa-2x"></i></div>
-      <div class="col">A copy of the complaint details has been emailed to you.
-        <p>If you did not enter an email address, you can download a copy of your food complaint as a PDF document below.</p> 
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-tag fa-2x"></i></div>
-      <div class="col">Your reference number is <span class="lead"><strong>INV999999</strong></span></div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-search fa-2x"></i></div>
-      <div class="col">Your complaint will be investigated by:
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Agency</strong></div>
-          <div class="col">Mytown city council</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Phone</strong></div>
-          <div class="col">(07) 9999 9999</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Email</strong></div>
-          <div class="col"><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Website</strong></div>
-          <div class="col"><a href="#">www.mytown.com.au</a></div>
-        </div>
-    </div>
-    </div>
+<h1>Food Complaint </h1>
 
-    <br>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col">Please contact the above agency if you need to provide further information or follow-up on your complaint. <p>Complaints made outside standard business hours (Monday to Friday, 8am to 5pm) are actioned the next business day.</p></strong></span></div>
-    </div>
-   </div> 
-</div>
+<h2>Privacy and security statement</h2>
+
+<p>In this privacy and security statement, ëQueensland Healthí means the State of Queensland acting through
+    Queensland Health.</p>
+
+<h3>1. Personal information</h3>
+
+<p>Queensland Health is committed to protecting the privacy of our website users. We understand and appreciate that
+    visitors to, and users of, our website, are concerned about their privacy and the confidentiality and security
+    of any personal information they provide to us.</p>
+
+<p>Personal information collected, held, stored, used and disclosed by Queensland Healthís Food Complaint 
+    website is handled in accordance with the <a
+        href="https://www.legislation.qld.gov.au/view/html/inforce/current/act-2009-014"><em>Information Privacy Act
+            2009 </em>(Qld)</a>. Personal information means information or an opinion, including information or an
+    opinion forming part of a database, whether true or not, and whether recorded in a material form or not, about
+    an individual whose identity is apparent, or can reasonably be ascertained, from the information or opinion.</p>
+
+<p>The purpose of the Food Complaint website is to provide an online interface to register a complaint about a food safety issue, e.g., food poisoning, poor food handling and hygiene, food business cleanliness, foreign matter found in food or incorrect food   labelling.</p>
+
+<h3>2. Security</h3>
+
+<p>We take strong precautions to protect your data from loss, unauthorised access, use, modification or disclosure,
+    and against misuse.</p>
+<p>All information is stored within Australia using secure data servers which meet all the stringent security
+    compliance requirements of the Queensland Government.</p>
 
 
-<h2>What's next?</h2>
-<p>The responsible agency may contact you:</p>
+<h3>3. Website monitoring and cookies</h3>
+
+<p>When you visit the Food Complaint website, our internet service and analytics provider/s make a record of your visit and
+    log the following information for statistical purposes only:</p>
 <ul>
-<li>If further information is needed about your complaint</li>
-<li>To arrange to collect a sample or remaining food product.</li>
+    <li>your internet web browser, computer platform and screen resolution; and</li>
+    <li>your traffic patterns through our site, including</li>
+    <ul>
+        <li>the date and time of your visit;</li>
+        <li>the pages and documents accessed;</li>
+        <li>the website you visited before ours; and</li>
+        <li>your server address.</li>
+    </ul>
 </ul>
+<p>This website uses ëcookiesí. A cookie is a small text file stored on your computer by your web browser which
+    allows us to store your preferences and record information about your visit. We use cookies to record usage
+    statistics for this site, such as the number of visits, assets viewed, browser type, and the way the site is
+    navigated. In using these cookies, we do not retrieve or record any personal information such as names or email
+    addresses.</p>
+<p>The anonymous statistical data we collect may be aggregated and used in broader statistical analysis or to assist
+    in making your website experience easier and more efficient. </p>
+<p>No attempt is, or will be, made to identify users or their browsing activities except, in the unlikely event of
+    an investigation, where a law enforcement agency may exercise a warrant to inspect website activity logs. </p>
 
-<h2>Download complaint details</h2>
-<p> You can download a copy of your food complaint as a PDF document. You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the PDF document.</p>
-<div id="DownloadDocument">
-<button id="DownloadDocument" class="qg-btn btn-secondary" onclick="downloadDocument()">Download PDF</button>
-</div> 
+
+<h3>4. Website correspondence and public records</h3>
+
+<p>All correspondence sent to this website will constitute public records and will be retained as required by the <a
+        href="https://www.legislation.qld.gov.au/view/html/inforce/current/act-2002-011"><em>Public Records Act 2002
+        </em>(Qld)</a> and other relevant legislation.</p>
+        
+<p>Your contact details will only be provided to other agencies as needed to investigate your complaint and in 
+accordance with our Privacy Statement. Under the Act, food safety complaints may be referred to one or more 
+of the following agencies:</p>
+    <ul>
+    <li>Local council;</li>
+    <li>Public Health Unit (Queensland Health);</li>
+    <li>Food Safety Standards and Regulation (Queensland Health);</li>
+    <li>Safe Food Production Queensland;</li>
+    <li>Another Queensland Government agency;</li>
+    <li>Interstate government agency;</li>
+    <li>Australian Government; and</li>
+    <li>New Zealand Government;</li>
+    </ul>
+    
+<h3>5. Email and feedback information</h3>
+
+<p>Your name and email details will not be added to any other mailing list, nor will we disclose these details to
+    third parties without your consent, unless the disclosure is authorised or required by or under a law.</p>
+<p>Email messages between yourself and Queensland Health may be monitored by our website support team
+    for website trouble shooting and maintenance purposes.</p>
+<p>Although best endeavours will be used, Queensland Health does not guarantee to reply to all email correspondence
+    received via this site. Where appropriate, emails may be forwarded internally to other business areas within the
+    Department of Health, or to an appropriate Hospital and Health Service for direct response.</p>
+
+<h3>6. Links to other websites</h3>
+
+<p>Where this website contains links to other websites, Queensland Health is not responsible for the privacy or
+    security practices or the content of those websites. We recommend that you read the privacy statement of that
+    website to familiarise yourself with its privacy practices.</p>
+
+<h3>7. Access to your personal information</h3>
+
+<p>Queensland Health supports your right to seek access to, or amendment of, personal information (including your
+    health information) we hold about you. To find out how to apply for access to, or amendment of, your personal
+    information, including your health information, or to learn more about how Queensland Health protects your
+    privacy rights, please visit <a href="https://www.health.qld.gov.au/system-governance/records-privacy">Health
+        records and privacy</a>. </p>
+
+<p><small><sup>1</sup>If you provide an email address that uses a web-based email service whose servers are based in
+        another country (e.g. Hotmail or Gmail), your personal information may be transferred outside of Australia.
+        By providing the email address, you voluntarily agree to this transfer.</small></p>
+<br>
+
 
 
 <div class="qg-content-footer">
   <dl>
       <dt>Last updated:</dt>
-      <dd>04 August 2020</dd>
+      <dd>03 August 2020</dd>
       <dt>Last reviewed:</dt>
-      <dd>04 August 2020</dd>
+      <dd>03 August 2020</dd>
   </dl>
 
 
@@ -719,10 +701,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </body>
 
 </html>
-
-
-
-
-
- 
-  

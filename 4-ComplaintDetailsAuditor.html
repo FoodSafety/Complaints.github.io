@@ -6,7 +6,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <title>Food safety complaint | Food manufacturer </title>
+  <title>Food safety complaint | Complaint details</title>
 
   <meta name="description" content="DESCRIPTION">
   <meta name="keywords" content="KEYWORDS">
@@ -61,57 +61,6 @@
 <!-- STYLESHEETS ADDED IN-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- SCRIPTS ADDED IN -->
-<!--Show or hide page sections on page load-->
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#KnowManufacturer').show();
-    $('#ManufacturerDetails').hide();
-    $('#ManufacturerContacted').hide();
-    $('#ManufacturerResponse').hide();
-    $('#NextButtons').hide();
-  });
-</script> 
-
-
-<!--Show or hide page sections based on whether the has food manufacturer details-->
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#KnowManufacturer').click(function(){
-        var selectedvalue = $("input[name='KnowManufacturer']:checked").val();
-        //alert("Selected value is: " + selectedvalue);
-        if (selectedvalue == "KnowManufacturer-Yes") {
-          $('#ManufacturerDetails').show();
-          $('#ManufacturerContacted').show();
-          $('#ManufacturerResponse').hide();
-          $('#NextButtons').show();
-        }
-        else {
-          $('#ManufacturerDetails').hide();
-          $('#ManufacturerContacted').hide();
-          $('#ManufacturerResponse').hide();
-          $('#NextButtons').show();
-          }
-      });
-  });
-</script> 
-
-<!--Show or hide page sections based on whether manufacturer was contacted-->
-  <script type="text/javascript">
-  $(document).ready(function(){
-      $('#ManufacturerContacted').click(function(){
-        var selectedvalue = $("input[name='ManufacturerContacted']:checked").val();
-        //alert("Selected value is: " + selectedvalue);
-        if (selectedvalue == "ManufacturerContacted-Yes") {
-          $('#ManufacturerResponse').show();
-        }
-        else {
-          $('#ManufacturerResponse').hide();
-        }
-      });
-  });
-</script> 
 
 </head>
 
@@ -217,185 +166,149 @@
 
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
-        <h1>Food manufacturer</h1>
+        <h1>Complaint Details</h1>
         <br>
-            
-        <form id="ManufacturerForm">
-         <div class="form-group" id="KnowManufacturer">
-            <fieldset>
-              <label>
-                <span class="lead">Do you have a food package that shows the manufacturer or importer details? </span>
-                <abbr title="(required)">*</abbr>
-                <small class="hint"> 
-                  For example: are the manufacturer or importer details printed on a packet?
-                  <br>
-                  Note: Food that is made on site, or made to order does not usually include manufacturer details (e.g.: food from a resturarant, takeaway store, café, bakery)
-                </small>
-              </label>
-              <ol class="questions">
-                <ul class= "choices compact">
-                  <li>
-                    <input type="radio" name="KnowManufacturer" id="KnowManufacturer-Yes" value="KnowManufacturer-Yes" unchecked/>
-                    <label for="KnowManufacturer-Yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" name="KnowManufacturer" id="KnowManufacturer-No" value="KnowManufacturer-No" unchecked/>
-                    <label for="KnowManufacturer-No">No</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset>  
-          </div>
+        <form id="ComplaintDetailsFormAuditor">
 
-          <div class="form-group" id="ManufacturerDetails">
-            <fieldset>
-              <div class="form-group">
-                <label for="ManufacturerName">
-                   <span class="lead">Manufacturer name
-                    <abbr title="(required)">*</abbr>
-                   </span>
-                </label>
-                <input class="form-control" type="text" name="ManufacturerName" id="ManufacturerName">
-                <br>
+          <div class="form-group">
+           <fieldset>
+          
+            <h2>Food auditor details</h2>
+            <small class="hint"> 
+              Please provide the details of the food auditor that your complaint is about.  
+            </small>
+            <br>
 
-                <label for="ManufacturerAddress">
-                  <span class="lead">Where is the manufacturer located?
-                  </span>
-                  <small class="hint"> 
-                    Please provide as much information about the where the manufacturer is physically located. 
-                  </small>
-                </label>
-                <br>
-                
-                <label for="ManufacturerAddressLine1">
-                  <span class="label">Address line 1 
-                  </span>
-                </label>
-                <input class="form-control" type="text" name="ManufacturerAddressLine1" id="ManufacturerAddressLine1" maxlength = "100">
-                <br>
-                
-                <label for="ManufacturerAddressLine2">
-                  <span class="label">Address line 2 
-                  </span>
-                <label>
-                <input class="form-control" type="text" name="ManufacturerAddressLine2" id="ManufacturerAddressLine2" maxlength = "100">
-                <br>
-
-                <label for="ManufacturerAddressSuburb">
-                  <span class="label">Suburb 
+            <label for="AuditorFirstName">
+                <span class="lead">First name
                   <abbr title="(required)">*</abbr>
                 </span>
-                </label>
-                <input type="text" name="ManufacturerAddressSuburb" id="ManufacturerAddressSuburb" maxlength = "50">
-                <br>
-                <br>
-                <label for="ManufacturerAddressState">
-                  <span class="label">State 
-                  <abbr title="(required)">*</abbr>
-                </span>
-                </label>
-                <select class="input-small" name="ManufacturerAddressState" id="ManufacturerAddressState">
-                  <option>ACT</option>
-                  <option>NSW</option>
-                  <option>NT</option>
-                  <option selected="selected">QLD</option>
-                  <option>SA</option>
-                  <option>TAS</option>
-                  <option>VIC</option>
-                  <option>WA</option>
-                </select>  
-                <br>
-                <br>
-                <label for="ManufacturerAddressPostcode">
-                    <span class="label">Post code
-                    <abbr title="(required)">*</abbr>
-                  </span>
-                  </label>
-                <input type="text" name="ManufacturerAddressPostCode" id="ManufacturerAddressPostCode" maxlength = "4">
-                <br>
-              </fieldset>  
-
-              <fieldset>
-                <label for="ManufacturerWebsite">
-                  <span class="lead">Website address
-                  </span>
-                </label>
-                <input class="form-control" type="url" name="ManufacturerWebsite" id="ManufacturerWebsite">
-                <br>
-               </fieldset>
-          </div>
-
-
-          <div class="form-group" id="ManufacturerContacted">
-            <fieldset>
-              <label>
-                <span class="lead">Did you contact the manufacturer about your concerns?</span>
-                <abbr title="(required)">*</abbr>
-              </label>
-              <ol class="questions">
-                <ul class= "choices compact">
-                  <li>
-                    <input type="radio" name="ManufacturerContacted" id="ManufacturerContacted-Yes" value="ManufacturerContacted-Yes" unchecked/>
-                    <label for="ManufacturerContacted-Yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" name="ManufacturerContacted" id="ManufacturerContacted-No" value="ManufacturerContacted-No" unchecked/>
-                    <label for="ManufacturerContacted-No">No</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset>              
-          </div>
-
-
-          <div class="form-group" id="ManufacturerResponse">
-            <label for="ManufacturerResponse">
-              <span class="lead">What was their response? 
-              <abbr title="(required)">*</abbr></span>
             </label>
-            <textarea class="form-control" rows="5" style="min-width: 100%" name="ManufacturerResponseDetails" id="ManufacturerResponseDetails"></textarea>
-          </div>
+            <input class="form-control" type="text" name="AuditorFirstName" id="AuditorFirstName">
+            <br>
+            
+            <label for="AuditorSurame">
+              <span class="lead">Surname
+                <abbr title="(required)">*</abbr>
+              </span>
+ 
+          </label>
+          <input class="form-control" type="text" name="AuditorSurname" id="AuditorSurname">
+          <br>
 
-        </form> 
+            <label for="AuditorBusinessName">
+                <span class="lead">Business name 
+                 </span>
+                  <small class="hint"> 
+                    Please provide the name of the food auditing business (if known).  
+                  </small>
+            </label>
+            <input class="form-control" type="text" name="RetailerName" id="RetailerName">
+            <br>
+  
+            <label for="AuditorPhone">
+              <span class="lead">Phone number 
+              </span>
+          </label>
+          <input class="form-control" type="tel" name="AuditorPhoneNumber" id="AuditorPhoneNumber" pattern = [0-9]{10}>
+
+          <br>
+          <label for="AuditorEmail">
+              <span class="lead">Email address
+              </span>
+          </label>
+          <input class="form-control" type="email" name="AuditorEmail" id="AuditorEmail">
+          <br>
+
+            <h2>Food auditor concern details</h2>
+            <label for="AuditorConcernDetail">
+              <span class="lead">What is your main concern?  
+              <abbr title="(required)">*</abbr></span>
+              <small class="hint"> 
+                Provide a detailed description about the nature of your complaint. 
+              </small>
+          </label>
+          <textarea class="form-control" rows="5" style="min-width: 100%" name="AuditorConcernDetail" id="AuditorConcernDetail"></textarea>
+          <br>
+
+          </fieldset>
+      </div>
+
+      <h2>Business type</h2>
+  
+      <div class="form-group" id="PrimaryProducer" >
+        <fieldset>
+          <label>
+            <span class="lead">Are you a primary producer? </span>
+            <abbr title="(required)">*</abbr>
+            <p> 
+              For example: a food business that makes, produces or processes any of the following foods:
+            </p>
+            <p>
+              <ul>
+                <li><strong>Smallgoods</strong> - for example, making salami</li>
+                <li><strong>Meat or meat products</strong> - for example, retail butchers, storage and transport of raw meat</li>
+                <li><strong>Eggs</strong> - for example, a farm producing eggs</li>
+                <li><strong>Seafood</strong> - for example, commercial fishing, wholesale seafood market</li>
+                <li><strong>Dairy</strong> - for example, processing milk, cheese, yoghurt, ice cream</li>
+                <li><strong>Seeds or seed sprouts</strong> - for example, harvesting alfalfa sprouts</li>
+                </ul>
+              </p>
+          </label>
+          <ol class="questions">
+            <ul class= "choices compact">
+              <li>
+                <input type="radio" name="PrimaryProducer" id="PrimaryProducer-Yes" value="PrimaryProducer-Yes" unchecked/>
+                <label for="PrimaryProducer-Yes">Yes</label>
+              </li>
+              <li>
+                <input type="radio" name="PrimaryProducer" id="PrimaryProducer-No" value="PrimaryProducer-No" unchecked/>
+                <label for="PrimaryProducer-No">No</label>
+              </li>
+            </ul>
+          </ol> 
+        </fieldset> 
+      </div>
+  
+      </form> 
 
         <!-- Page buttons -->
-        <div class="form-group" id="NextButtons">
-          <a class="qg-btn btn-default" href="5-Retailer.html">Previous</a>&nbsp;
-          <a class="qg-btn btn-primary" href="7-Documents.html">Next</a>&nbsp;
-          <a href="1-Home.html">Cancel</a>
-          <br>
-          <br>
-      </div>
-         <!-- Page dates-->  
-         <div class="qg-content-footer">
+        <a class="qg-btn btn-default" href="3-ComplaintType.html">Previous</a>&nbsp;
+        <a class="qg-btn btn-primary" href="8-AboutYou.html">Next</a>&nbsp;
+        <a href="1-Home.html">Cancel</a>
+        <br>
+        <br>
+
+        <!-- Page dates-->  
+        <div class="qg-content-footer">
           <dl>
             <dt>Last updated:</dt>
-            <dd>27 April 2020</dd>
+            <dd>31 July 2020</dd>
             <dt>Last reviewed:</dt>
-            <dd>27 April 2020</dd>
+            <dd>31 July 2020</dd>
           </dl>
       </div>
-  </div>
-    
+</div>
+  
 
-    <!-- LEFT SIDE NAVIGATION --> 
-    <nav id="qg-section-nav" aria-label="side navigation" role="navigation">
-      <h2><a href="#">The Food Pantry</a></h2>
-      <ul aria-label="section navigation">
-        <li><a href="#">Make a food safety complaint</a>
-          <ol class="guide-sub-nav">
-            <li><a href="1-Home.html" aria-hidden="true" ><span class="page-number">1</span>Home</a></li>
-            <li><a href="2-AcceptTerms.html"aria-hidden="true"><span class="page-number">2</span>Accept terms of use</a></li>                
-            <li><a href="3-ComplaintType.html" aria-hidden="true"><span class="page-number">3</span>Complaint type</a></li>
-            <li><a href="4-ComplaintDetails.html" aria-hidden="true"><span class="page-number">4</span>Complaint details</a></li>
-            <li><a href="5-Retailer.html" aria-hidden="true"><span class="page-number">5</span>Business details</a></li>
-            <li><a href="6-Manufacturer.html" aria-hidden="true" class="active"><span class="page-number">6</span>Manufacturer details</a></li>
-            <li><a href="7-Documents.html" aria-hidden="true"><span class="page-number">7</span>Documents</a></li>
-            <li><a href="8-AboutYou.html" aria-hidden="true"><span class="page-number">8</span>About you</a></li>
-           </ol>
-        </li>
-      </ul>
-    </nav>
+  <!-- LEFT SIDE NAVIGATION --> 
+  <nav id="qg-section-nav" aria-label="side navigation" role="navigation">
+    <h2><a href="#">The Food Pantry</a></h2>
+    <ul aria-label="section navigation">
+      <li><a href="#">Make a food safety complaint</a>
+        <ol class="guide-sub-nav">
+          <li><a href="1-Home.html" aria-hidden="true" ><span class="page-number">1</span>Home</a></li>
+          <li><a href="2-AcceptTerms.html"aria-hidden="true"><span class="page-number">2</span>Accept terms of use</a></li>                
+          <li><a href="3-ComplaintType.html" aria-hidden="true"><span class="page-number">3</span>Complaint type</a></li>
+          <li><a href="4-ComplaintDetails.html" aria-hidden="true" class="active"><span class="page-number">4</span>Complaint details</a></li>
+          <li><a href="5-Retailer.html" aria-hidden="true"><span class="page-number">5</span>Business details</a></li>
+          <li><a href="6-Manufacturer.html" aria-hidden="true"><span class="page-number">6</span>Manufacturer details</a></li>
+          <li><a href="7-Documents.html" aria-hidden="true"><span class="page-number">7</span>Documents</a></li>
+          <li><a href="8-AboutYou.html" aria-hidden="true"><span class="page-number">8</span>About you</a></li>
+         </ol>
+      </li>
+    </ul>
+  </nav>
   </div>
 
    <!-- Feeback button and sharing links-->

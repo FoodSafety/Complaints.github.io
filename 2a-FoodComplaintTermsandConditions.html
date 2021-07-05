@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Thankyou | Queensland Government</title>
+    <title>Food complaint terms and conditions | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -58,58 +58,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-<!-- STYLESHEETS ADDED IN-->
 
-<!--SCRIPTS ADDED IN-->
-<!--Show an example of documents uploaded-->
-<script>
-  function downloadDocument() {
-    var complaintType = sessionStorage.getItem("complaint_type");
-    
-    if (complaintType !== null && complaintType !=='') {
-      var documentName = ("downloads/FoodComplaintExampleDownload" + complaintType + ".pdf");
-      window.open(documentName, "_blank"); 
-   }
-    else {
-      alert("Sorry, there is currently no download document available for this complaint type.")
-    }
-  }
-</script>    
-
-<!--Show an example of documents uploaded-->
-<script>
-  function emailDocument() {
-    var complaintType = sessionStorage.getItem("complaint_type");
-    
-    if (complaintType !== null && complaintType !=='') {
-      var documentName = ("emails/FoodComplaintExampleEmail" + complaintType + ".msg");
-      window.open(documentName, "_blank"); 
-   }
-    else {
-      alert("Sorry, there is currently no example email available for this complaint type.")
-    }
-  }
-</script>    
-
-
-<!--Note for Start Survey button-->
-<script>
-  function startSurvey() {
-      alert("Selecting this start survey button will take you to an form for feedback your experience with this service'")
-   
-  }
-</script>  
-</head>
-
-<body data-qg-accessibility="true">
-
-  <section id="qg-access" role="navigation" aria-labelledby="landmark-label">
-    <h2 id="landmark-label" tabindex="0">Skip links and keyboard navigation</h2>
-    <ul>
-      <li><a id="skip-to-content" href="#qg-primary-content">Skip to content</a></li>
-      <li id="access-instructions"><a href="https://www.qld.gov.au/help/keyboard#section-aria-keyboard-navigation">Use tab and cursor keys to move around the page (more information)</a></li>
-    </ul>
-  </section>
 </head>
 
 <body data-qg-accessibility="true">
@@ -130,18 +79,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</ul>
 </section>
 
-
-    <!-- PLEASE REMOVE Message for prototype - this will not be displayed in the final design-->
-    <div class="alert alert-danger qg-noicon">
-      <header text-align="centre" vertical-align="middle">
-        <h2>Food Safety Complaint Prototype</h2>
-        </header>
-      <section text-align="centre" vertical-align="middle">
-        <p>Internal use only.  This is a prototype of the proposed online food safety complaint form.  
-        This banner will not be shown in the final product.
-        &nbsp;  &nbsp; <a class="qg-btn btn-default" href="10-ExampleOutputs.html">View example PDF documents and emails</a> </p>
-   </section>
-    </div>
 
 
 
@@ -413,8 +350,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </a>
         </li>
         <li class="qg-breadcrumb-list-item">
-          <span aria-current="page">
+          <a href="1-Home.html" class="qg-breadcrumb-list-item__link">
             Make a food safety complaint
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <span aria-current="page">
+            Food complaint terms and conditions
           </span>
         </li>
       </ol>
@@ -445,78 +387,295 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 -->
 
-<h1>Thank you for reporting your food safety complaint</h1>
-     
-<div class="alert alert-success" role="alert">
-   <div class="container">
-    <div class="row">
-      <div class="col-1"><i class="fa fa-check-circle fa-2x"></i></div>
-      <div class="col"><p>Your complaint has been successfully lodged.</p> </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-envelope fa-2x"></i></div>
-      <div class="col">A copy of the complaint details has been emailed to you.
-        <p>If you did not enter an email address, you can download a copy of your food complaint as a PDF document below.</p> 
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-tag fa-2x"></i></div>
-      <div class="col">Your reference number is <span class="lead"><strong>INV999999</strong></span></div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1"><i class="fa fa-search fa-2x"></i></div>
-      <div class="col">Your complaint will be investigated by:
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Agency</strong></div>
-          <div class="col">Mytown city council</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Phone</strong></div>
-          <div class="col">(07) 9999 9999</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Email</strong></div>
-          <div class="col"><a href="mailto:mytownEHO@mytown.com.au">mytownEHO@mytown.com.au</a></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-1"><strong>Website</strong></div>
-          <div class="col"><a href="#">www.mytown.com.au</a></div>
-        </div>
-    </div>
-    </div>
+<h1>Food Complaint Terms and Conditions</h1>
 
-    <br>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col">Please contact the above agency if you need to provide further information or follow-up on your complaint. <p>Complaints made outside standard business hours (Monday to Friday, 8am to 5pm) are actioned the next business day.</p></strong></span></div>
-    </div>
-   </div> 
-</div>
+          <p>The Food Complaint website is owned and operated by the State of
+              Queensland acting though Queensland Health (<b>Queensland Health</b>) ABN 66 329 169 412. </p>
 
+          <ol style="list-style-type: decimal;">
+              <h2>
+                  <li>Definitions and Interpretation</li>
+              </h2>
+              <p>In these Terms:</p>
+              <ol style="list-style-type: lower-alpha;">
+                  <li>the expressions '<b>user</b>', '<b>you</b>' and '<b>your(s)</b>' refer to the individual or
+                      organisation accessing the Food Complaint website;</li>
+                  <li><b>Act</b> means the <em>Food Act 2006</em> (Qld);</li>
+                  <li><b>Applicable Privacy Law</b> means the <em>Information Privacy Act 2009</em> (Qld), <em>Privacy
+                          Act 1988</em> (Cth), <em>Hospital and Health Boards Act 2011</em> (Qld), <em>Public Health
+                          Act 2005</em> (Qld), <em>Ambulance Service Act 1991</em> (Qld), and any other legislation
+                      (including delegated and subordinate legislation such as regulations), code or guideline which
+                      applies to you and relates to the protection of Personal Information and/or confidential
+                      information;</li>
+                  <li><b>Claim</b> includes (and is not limited to) any claim, action, demand, application,
+                      proceeding, judgment, enforcement hearing or enforcement order;</li>
+                  <li><b>Content</b> means information accessed through, or contained in the Food Complaint website, including your
+                      information;</li>
+                  <li><b>Food Complaint website</b> means the Food Complaint website and the services available
+                      through it, developed, owned and operated by, Queensland Health;</li>
+                  <li><b>Intellectual Property Rights</b> includes all copyright, trade mark, design, patent,
+                      semiconductor or circuit layout rights, plant breedersí rights and any other proprietary rights
+                      (excluding moral rights), and any rights to registration of such rights existing anywhere in the
+                      world, whenever created, but excludes moral rights;</li>
+                  <li><b>Licence</b> has the meaning given to it in clause 3;</li>
+                  <li><b>Personal Information </b> has the meaning given to it in the Applicable Privacy Law;</li>
+                  <li><b>Purpose </b> is to register a complaint about a food safety issue, e.g., food poisoning, 
+                  poor food handling and hygiene, food business cleanliness, foreign matter found in 
+                  food or incorrect food labelling.;</li>
+                  <li><b>Queensland Government Body </b> means any of:</li>
+                  <ul>
+                      <ol style="list-style-type: lower-roman;">
+                          <li>a body corporate or an unincorporated body established or constituted for a public
+                              purpose by the State of Queensland legislation, or an instrument made under that
+                              legislation (including a local authority);</li>
+                          <li>a body established by the State of Queensland through the Governor or a Minister; or
+                          </li>
+                          <li>an incorporated company over which the State of Queensland exercises control;</li>
+                      </ol>
+                  </ul>
 
-<h2>What's next?</h2>
-<p>The responsible agency may contact you:</p>
-<ul>
-<li>If further information is needed about your complaint</li>
-<li>To arrange to collect a sample or remaining food product.</li>
-</ul>
+                  <li><b>Terms</b> means these Food Complaint Terms of Access and Use, which includes to the extent that
+                      they are not inconsistent with the Terms, the following:</li>
+                  <ul>
+                      <ol style="list-style-type: lower-roman;">
+                          <li>the Queensland Health <a href="https://www.health.qld.gov.au/global/privacy">Privacy
+                                  Policy</a>. </li>
+                          <li>the <a href="2b-FoodComplaintPrivacy.html">Food Complaint Privacy and Security Statement</a>;</li>
+                          <li>the Queensland Health <a
+                                  href="https://www.health.qld.gov.au/global/copyright-statement">Copyright
+                                  Statement</a>; and </li>
+                          <li>the Queensland Health <a
+                                  href="https://www.health.qld.gov.au/global/disclaimer">Disclaimer</a>; </li>
+                      </ol>
+                  </ul>
+                  <li>'<b>include</b>', '<b>including</b>' and similar words must be read as if followed by the words
+                      ëwithout limitationí; </li>
+                  <li>headings do not affect interpretation; and</li>
+                  <li>words in the singular include the plural and vice versa.</li>
+              </ol>
+              <h2>
+                  <li>Accepting these Terms</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-two">
+                  <li>In order to access and use the Food Complaint website, you must first agree to these Terms. Acceptance of these
+                      Terms constitutes a legally binding agreement between you and Queensland Health. By accessing
+                      and/or using the Food Complaint website, you agree to be bound by these Terms and to abide by them in connection
+                      with your access to and/or use of the Food Complaint website. </li>
+                  <li>Queensland Health reserves the right to amend, modify, add, delete and make corrections to these
+                      Terms by updating the Food Complaint website to incorporate new Terms, at any time without notice. All changes
+                      are affected from the date they are posted, and your continued access and/or use of the Food Complaint website
+                      after the posting of each change will constitute your acceptance of the variation of the Terms.
+                      It is your responsibility to ensure you are aware of any changes to the Terms each time you
+                      access and/or use the Food Complaint website. </li>
+              </ol>
+              <h2>
+                  <li>Licence</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-three">
+                  <li>As a user of the Food Complaint website, you are granted a non-exclusive, non-transferable, revocable, limited
+                      licence to access and use the Food Complaint website and the Content in accordance with these Terms. Queensland
+                      Health may terminate this licence at any time for any reason.</li>
+                  <li>You acknowledge that you have no rights, including Intellectual Property Rights, in, or to, 
+                  the Food Complaint website or other information in connection with, or provided by, the Food 
+                  Complaint website or technology used or supported by the Food Complaint website, other than the 
+                  right to use the Food Complaint website in accordance with these Terms.</li>
+              </ol>
+              <h2>
+                  <li>Your obligations</li>
+              </h2>
+                  <p>Subject to these Terms, you may access and use the Food Complaint website and the Content for the Purpose. You
+                      must not use the Food Complaint website and the Content for any other purpose.</p>
 
-<h2>Download complaint details</h2>
-<p> You can download a copy of your food complaint as a PDF document. You will need <a href="https://get.adobe.com/reader/">Adobe Acrobat reader</a> to view the PDF document.</p>
-<div id="DownloadDocument">
-<button id="DownloadDocument" class="qg-btn btn-secondary" onclick="downloadDocument()">Download PDF</button>
-</div> 
+              <h2>
+                  <li>Limitations on use</li>
+              </h2>
+              <p>You must not:</p>
+              <ol style="list-style-type: lower-alpha;">
+                  <li>use the Food Complaint website or the Content in any unlawful manner, for any purpose other than the Purpose, or
+                      in any manner inconsistent with these Terms;</li>
+                  <li>use the Food Complaint website in any way that could damage, disable, overburden, impair 
+                  or compromise the Food Complaint website</li>
+                  <li>hack into the Food Complaint website, destroy data, or insert malicious code, a virus 
+                  or harmful data into the Food Complaint website;</li>
+                  <li>disrupt or interfere with the Food Complaint website or servers of other websites, software, hardware or
+                      equipment connected to or via the Food Complaint website;</li>
+                  <li>violate any applicable law by your access to or use of the Food Complaint website; </li>
+                  <li>permit, whether directly or indirectly (including through careless or reckless conduct), any
+                      access to, or use of, the Food Complaint website by any person who is not authorised by Queensland Health to do
+                      so;</li>
+                  <li>copy, reproduce, aggregate or commercialise the Content; or</li>
+                  <li>provide or disclose the Content to any other person.</li>
+              </ol>
+              <h2>
+                  <li>Termination</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-six">
+                  <li>Queensland Health reserves the right to cease operating the Food Complaint website at any time, without notice,
+                      and to terminate these Terms.</li>
+                  <li>Queensland Health may terminate your right or ability to use the Food Complaint website at any time with
+                      immediate effect if you fail to comply with these Terms.</li>
+                  <li>In addition to any other remedies Queensland Health might have at law, you agree that Queensland
+                      Health may cancel or suspend your access to the Food Complaint website at any time, with or without prior
+                      notice, without providing reasons, if Queensland Health considers in its absolute discretion,
+                      that you have breached these Terms, are likely to breach these Terms or otherwise pose or create
+                      a privacy or security risk to any person, including without limitation Queensland Health, a
+                      Queensland Government Body, their officers, employees, contractors, agents or representatives
+                      (whether in the course of their employment or otherwise), the Food Complaint website, information repositories
+                      or applications, the computer systems, applications or networks of Queensland Health. </li>
+              </ol>
+              <h2>
+                  <li>Intellectual Property Rights</li>
+              </h2>
+              <ol class="decimal-wrapper-seven" style="list-style-type: decimal;
+           padding: 0;">
+                  <li>You acknowledge that all Intellectual Property Rights in the Food Complaint website are owned by, or licensed
+                      to, Queensland Health and are protected by copyright, trade mark and intellectual property laws
+                      in Australia or overseas.</li>
+                  <li>Without Queensland Healthís prior written consent (unless you are expressly authorised by law)
+                      you must not yourself, or with others, or permit any other person, to do, or omit to do,
+                      anything in relation to the Food Complaint website or the Content other than as permitted by these Terms.</li>
+                  <li>Nothing you do on or in relation to the Food Complaint website or the Content will transfer any Intellectual
+                      Property Rights to you or license you to exercise any Intellectual Property Rights except as
+                      expressly stated in these Terms.</li>
+              </ol>
+              <h2>
+                  <li>Exclusion of warranties</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-eight">
+                  <li>All Content and services on or available through the Food Complaint website are provided on an ëas isí and ëas
+                      availableí basis and without warranties of any kind, express or implied, except any which may be
+                      implied by statute and are incapable of exclusion, in respect of the Food Complaint website or the Content.</li>
+                  <li>To the maximum extent permitted by law, Queensland Health excludes, and does not make any
+                      representation, warranty, or endorsement of any kind, whether express or implied, in relation to
+                      the content, accuracy, completeness, accessibility, suitability, safety, security, reliability,
+                      or any other aspect of:</li>
+                  <ol style="list-style-type: lower-alpha;">
+                      <li>any Content, material and/or information in the Food Complaint website;</li>
+                      <li>the performance and/or availability of the Food Complaint website; or</li>
+                      <li>loss, damage, corruption or degradation of any data or other material as a result of your
+                          access to or use of the Food Complaint website.</li>
+                  </ol>
+                  <li>You acknowledge that the Content available on the Food Complaint website may change at any time.</li>
+              </ol>
+              <h2>
+                  <li>Exclusion of liability</li>
+              </h2>
+              <p>To the maximum extent permitted by law, Queensland Health excludes all liability for any loss or
+                  damage whatsoever which is suffered (including but not limited to direct, indirect, incidental,
+                  special, consequential or exemplary damages, loss of profits or revenue, business interruption,
+                  loss, damage or corruption of data or failure to realise anticipated savings or benefits or business
+                  opportunities) as a result of:</p>
+              <ol style="list-style-type: lower-alpha;">
+                  <li>the use of, reliance on, or action taken as a result of your access to, the Food Complaint website, or any
+                      Content, Personal Information or any information or material in the Food Complaint website;</li>
+                  <li>accessing, viewing and/or using the Food Complaint website or the Content;</li>
+                  <li>any interruption, suspension or termination of the Food Complaint website in whole or part for whatever reason
+                      including failure or suspension of public or private telecommunications network; </li>
+                  <li>the unavailability, unsuitability and/or non-connectivity of the Food Complaint website or the Content; or</li>
+                  <li>any loss, damage, corruption, or degradation of any Content, data, information, computer code or
+                      other material as a result of:</li>
+                  <ol style="list-style-type: lower-roman;">
+                      <li>the use of the Food Complaint website or any Content; or</li>
+                      <li>viruses or other technologically harmful material that may infect your computer or mobile
+                          device due to your use of the Food Complaint website.</li>
+                  </ol>
+              </ol>
+              <h2>
+                  <li>Release from claims and indemnity</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-ten">
+                  <li>You hereby forever waive, release, forgive, discharge and relinquish any and all Claims that you
+                      may have against Queensland Health and its employees, officers, contractors, agents and
+                      representatives, in connection with, or arising out of, or incidental to, your access to, or use
+                      of, the Food Complaint website and/or the Content, including but not limited 
+                      to, accessing the Food Complaint website, any
+                      Content, Personal Information, other information and materials in, or from, the Food Complaint website or
+                      submitting or uploading any Content, Personal Information, other information, concepts, data or
+                      other materials to the Food Complaint website.</li>
+                  <li>You indemnify Queensland Health, Queensland Government Bodies, their employees, officers,
+                      contractors, agents and representatives (<b>those indemnified</b>) from and against any loss,
+                      liability, damage or expense (including legal fees on a solicitor client basis) in relation to
+                      each and every Claim made by any third party against those indemnified, howsoever caused
+                      (including through negligence) directly or indirectly arising out of or in connection with:</li>
+                  <ol style="list-style-type: lower-alpha;">
+                      <li>your access to, or use of, the Food Complaint website and Content, including, but not limited to, accessing
+                          any Content, Personal Information, other information and materials, including any linked
+                          website, in, or from, the Food Complaint website or submitting or uploading any Content, Personal
+                          Information, other information, concepts, data or other materials to the Food Complaint website;</li>
+                      <li>your reliance on the Food Complaint website or any Content;</li>
+                      <li>breach by you of the Terms; and</li>
+                      <li>your infringement, or potential infringement, of the Intellectual Property Rights of a third
+                          party in connection with the Food Complaint website or any Content.</li>
+                  </ol>
+              </ol>
+              <h2>
+                  <li>Risk</li>
+              </h2>
+              <p>You access the Food Complaint website and use the Content at your own risk and Queensland Health accepts no
+                  responsibility for any interference, loss, damage or disruption to your own computer, mobile device,
+                  process, procedure, business, schedule or otherwise which arises in 
+                  connection with your use of the Food Complaint website. 
+                  You must take your own precautions to ensure that the process which you employ to obtain
+                  access to the Food Complaint website does not expose you to the risk of viruses, malicious computer code or other
+                  forms of interference which may damage your computer or mobile device or otherwise cause you or any
+                  person loss, damage or corruption.</p>
+              <h2>
+                  <li>Software viruses etc</li>
+              </h2>
+              <p>Without limiting the above, Queensland Health does not warrant that the Food Complaint website, Content, information
+                  and/or material is free from viruses or other conditions that could damage or interfere with data,
+                  hardware or software. Accordingly, Queensland Health excludes to the maximum extent possible, any
+                  liability for any loss suffered as a result of any such viruses or defects.</p>
+              <h2>
+                  <li>Privacy</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-thirteen">
+                  <li>You acknowledge that Personal Information about you collected by Queensland Health because of
+                      your access to and use of the Food Complaint website will be held by, or on behalf of, Queensland Health. This
+                      information is collected for the purpose of operating and managing the Food Complaint website and providing you
+                      with the Content. Queensland Health may use your Personal Information in accordance with the
+                      Queensland Health <a href="https://www.health.qld.gov.au/global/privacy">Privacy Policy</a> and the 
+                      <a href="2b-FoodComplaintPrivacy.html">Food Complaint Privacy and
+                          Security Statement</a>. Queensland Health protects, collects and manages your Personal
+                      Information in accordance with the <em>Information Privacy Act 2009</em> (Qld). Queensland
+                      Health may be permitted or required to disclose Personal Information by law, under compulsion of
+                      law by a court or government agency.</li>
+                  <li>For information on how to gain access to your Personal Information, how Queensland Health uses
+                      your Personal Information, provision of contact details or other privacy matters, please see the
+                      Queensland Health <a href="https://www.health.qld.gov.au/global/privacy">Privacy Policy</a> and the 
+                      <a href="2b-FoodComplaintPrivacy.html">Food Complaint Privacy and
+                          Security Statement</a>.</li>
+              </ol>
+              <h2>
+                  <li>General</li>
+              </h2>
+              <ol style="list-style-type: decimal;
+           padding: 0;" class="decimal-wrapper-fourteen">
+                  <li>These Terms are governed by and construed in accordance with the laws in force in Queensland,
+                      Australia and you submit to the non-exclusive jurisdiction of the courts exercising jurisdiction
+                      in Queensland and courts of appeal.</li>
+                  <li>These Terms, together with other documents referred to in them, constitute the entire agreement
+                      between you and Queensland Health relating to the Food Complaint website.</li>
+                  <li>The invalidity or unenforceability of any provision of these Terms will not affect the rest of
+                      the provisions in these Terms, which will continue in full force and effect.</li>
+                  <li>No provision of these Terms will be taken to be waived except by written notice signed by you
+                      and Queensland Health. </li>
+              </ol>
+          </ol>
 
 
 <div class="qg-content-footer">
   <dl>
       <dt>Last updated:</dt>
-      <dd>04 August 2020</dd>
+      <dd>03 August 2020</dd>
       <dt>Last reviewed:</dt>
-      <dd>04 August 2020</dd>
+      <dd>03 August 2020</dd>
   </dl>
 
 
@@ -723,6 +882,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
- 
-  

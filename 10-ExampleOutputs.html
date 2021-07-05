@@ -6,7 +6,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <title>Food safety complaint | Food manufacturer </title>
+  <title>Food safety complaint | Thankyou </title>
 
   <meta name="description" content="DESCRIPTION">
   <meta name="keywords" content="KEYWORDS">
@@ -61,58 +61,66 @@
 <!-- STYLESHEETS ADDED IN-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg="nest"></script>
 
-<!-- SCRIPTS ADDED IN -->
-<!--Show or hide page sections on page load-->
+<!--SCRIPTS ADDED IN-->
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#KnowManufacturer').show();
-    $('#ManufacturerDetails').hide();
-    $('#ManufacturerContacted').hide();
-    $('#ManufacturerResponse').hide();
-    $('#NextButtons').hide();
+    $("#ShowStuff").hide();
+
   });
-</script> 
+</script>
+
+<script>
+  function showStuff() {
+    $("#ShowStuff").show();
+}
+</script>
+
+<script>
+  function hideStuff() {
+    $("#ShowStuff").hide();
+}
+</script>
+
+<!--Show an example of documents uploaded-->
+<script>
+  function downloadDocument() {
+    var complaintType = sessionStorage.getItem("complaint_type");
+    
+    if (complaintType !== null && complaintType !=='') {
+      var documentName = ("downloads/FoodComplaintExampleDownload" + complaintType + ".pdf");
+      window.open(documentName, "_blank"); 
+   }
+    else {
+      alert("Sorry, there is currently no download document available for this complaint type.")
+    }
+  }
+</script>    
+
+<!--Show an example of documents uploaded-->
+<script>
+  function emailDocument() {
+    var complaintType = sessionStorage.getItem("complaint_type");
+    
+    if (complaintType !== null && complaintType !=='') {
+      var documentName = ("emails/FoodComplaintExampleEmail" + complaintType + ".msg");
+      window.open(documentName, "_blank"); 
+   }
+    else {
+      alert("Sorry, there is currently no example email available for this complaint type.")
+    }
+  }
+</script>    
 
 
-<!--Show or hide page sections based on whether the has food manufacturer details-->
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#KnowManufacturer').click(function(){
-        var selectedvalue = $("input[name='KnowManufacturer']:checked").val();
-        //alert("Selected value is: " + selectedvalue);
-        if (selectedvalue == "KnowManufacturer-Yes") {
-          $('#ManufacturerDetails').show();
-          $('#ManufacturerContacted').show();
-          $('#ManufacturerResponse').hide();
-          $('#NextButtons').show();
-        }
-        else {
-          $('#ManufacturerDetails').hide();
-          $('#ManufacturerContacted').hide();
-          $('#ManufacturerResponse').hide();
-          $('#NextButtons').show();
-          }
-      });
-  });
-</script> 
-
-<!--Show or hide page sections based on whether manufacturer was contacted-->
-  <script type="text/javascript">
-  $(document).ready(function(){
-      $('#ManufacturerContacted').click(function(){
-        var selectedvalue = $("input[name='ManufacturerContacted']:checked").val();
-        //alert("Selected value is: " + selectedvalue);
-        if (selectedvalue == "ManufacturerContacted-Yes") {
-          $('#ManufacturerResponse').show();
-        }
-        else {
-          $('#ManufacturerResponse').hide();
-        }
-      });
-  });
-</script> 
-
+<!--Note for Start Survey button-->
+<script>
+  function startSurvey() {
+      alert("Selecting this start survey button will take you to an form for feedback your experience with this service'")
+   
+  }
+</script>  
 </head>
 
 <body data-qg-accessibility="true">
@@ -127,7 +135,9 @@
 
 <!-- Page body-->
 <div class="container-fluid qg-site-width">
-    
+ 
+ 
+  
   <!-- Page header-->
   <header id="qg-site-header">
 
@@ -135,12 +145,12 @@
     <div class="alert alert-danger qg-noicon">
       <header text-align="centre" vertical-align="middle">
         <h2>Food Safety Complaint Prototype</h2>
-       </header>
+        </header>
       <section text-align="centre" vertical-align="middle">
         <p>Internal use only.  This is a prototype of the proposed online food safety complaint form.  
         This banner will not be shown in the final product.</p>
       </section>
-    </div>    
+    </div>
 
     <!-- Queensland Government Logo-->
     <div class="qg-coat-of-arms col-xs-6 col-md-4">
@@ -217,164 +227,90 @@
 
       <!-- Main content-->
       <div id="qg-primary-content" role="main">
-        <h1>Food manufacturer</h1>
-        <br>
-            
-        <form id="ManufacturerForm">
-         <div class="form-group" id="KnowManufacturer">
-            <fieldset>
-              <label>
-                <span class="lead">Do you have a food package that shows the manufacturer or importer details? </span>
-                <abbr title="(required)">*</abbr>
-                <small class="hint"> 
-                  For example: are the manufacturer or importer details printed on a packet?
-                  <br>
-                  Note: Food that is made on site, or made to order does not usually include manufacturer details (e.g.: food from a resturarant, takeaway store, café, bakery)
-                </small>
-              </label>
-              <ol class="questions">
-                <ul class= "choices compact">
-                  <li>
-                    <input type="radio" name="KnowManufacturer" id="KnowManufacturer-Yes" value="KnowManufacturer-Yes" unchecked/>
-                    <label for="KnowManufacturer-Yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" name="KnowManufacturer" id="KnowManufacturer-No" value="KnowManufacturer-No" unchecked/>
-                    <label for="KnowManufacturer-No">No</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset>  
+      
+        <div id="ComplaintPageLinks">
+          <h1>Example PDF and email outputs</h1>
+          <br>
+          <div class="alert alert-warning" role="alert">
+              <h3>You have clicked on the view example outputs from the thankyou page.</h3>
+              <p>This page has been added in for the prototype, and will not be included in the final product.</p>
+               <p>Select to view and example PDF and email for each complaint type.</p>
           </div>
+          <br>
+          <br>
 
-          <div class="form-group" id="ManufacturerDetails">
-            <fieldset>
-              <div class="form-group">
-                <label for="ManufacturerName">
-                   <span class="lead">Manufacturer name
-                    <abbr title="(required)">*</abbr>
-                   </span>
-                </label>
-                <input class="form-control" type="text" name="ManufacturerName" id="ManufacturerName">
-                <br>
-
-                <label for="ManufacturerAddress">
-                  <span class="lead">Where is the manufacturer located?
-                  </span>
-                  <small class="hint"> 
-                    Please provide as much information about the where the manufacturer is physically located. 
-                  </small>
-                </label>
-                <br>
-                
-                <label for="ManufacturerAddressLine1">
-                  <span class="label">Address line 1 
-                  </span>
-                </label>
-                <input class="form-control" type="text" name="ManufacturerAddressLine1" id="ManufacturerAddressLine1" maxlength = "100">
-                <br>
-                
-                <label for="ManufacturerAddressLine2">
-                  <span class="label">Address line 2 
-                  </span>
-                <label>
-                <input class="form-control" type="text" name="ManufacturerAddressLine2" id="ManufacturerAddressLine2" maxlength = "100">
-                <br>
-
-                <label for="ManufacturerAddressSuburb">
-                  <span class="label">Suburb 
-                  <abbr title="(required)">*</abbr>
-                </span>
-                </label>
-                <input type="text" name="ManufacturerAddressSuburb" id="ManufacturerAddressSuburb" maxlength = "50">
-                <br>
-                <br>
-                <label for="ManufacturerAddressState">
-                  <span class="label">State 
-                  <abbr title="(required)">*</abbr>
-                </span>
-                </label>
-                <select class="input-small" name="ManufacturerAddressState" id="ManufacturerAddressState">
-                  <option>ACT</option>
-                  <option>NSW</option>
-                  <option>NT</option>
-                  <option selected="selected">QLD</option>
-                  <option>SA</option>
-                  <option>TAS</option>
-                  <option>VIC</option>
-                  <option>WA</option>
-                </select>  
-                <br>
-                <br>
-                <label for="ManufacturerAddressPostcode">
-                    <span class="label">Post code
-                    <abbr title="(required)">*</abbr>
-                  </span>
-                  </label>
-                <input type="text" name="ManufacturerAddressPostCode" id="ManufacturerAddressPostCode" maxlength = "4">
-                <br>
-              </fieldset>  
-
-              <fieldset>
-                <label for="ManufacturerWebsite">
-                  <span class="lead">Website address
-                  </span>
-                </label>
-                <input class="form-control" type="url" name="ManufacturerWebsite" id="ManufacturerWebsite">
-                <br>
-               </fieldset>
-          </div>
-
-
-          <div class="form-group" id="ManufacturerContacted">
-            <fieldset>
-              <label>
-                <span class="lead">Did you contact the manufacturer about your concerns?</span>
-                <abbr title="(required)">*</abbr>
-              </label>
-              <ol class="questions">
-                <ul class= "choices compact">
-                  <li>
-                    <input type="radio" name="ManufacturerContacted" id="ManufacturerContacted-Yes" value="ManufacturerContacted-Yes" unchecked/>
-                    <label for="ManufacturerContacted-Yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" name="ManufacturerContacted" id="ManufacturerContacted-No" value="ManufacturerContacted-No" unchecked/>
-                    <label for="ManufacturerContacted-No">No</label>
-                  </li>
-                </ul>
-              </ol> 
-            </fieldset>              
-          </div>
-
-
-          <div class="form-group" id="ManufacturerResponse">
-            <label for="ManufacturerResponse">
-              <span class="lead">What was their response? 
-              <abbr title="(required)">*</abbr></span>
-            </label>
-            <textarea class="form-control" rows="5" style="min-width: 100%" name="ManufacturerResponseDetails" id="ManufacturerResponseDetails"></textarea>
-          </div>
-
-        </form> 
+          <table class="table" width=100%>
+            <thead>
+              <td><strong>Complaint type</strong></td>
+              <td><strong>PDF download</strong></td>
+              <td><strong>Email</strong></td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Allergy or allergic reaction</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadAllergy.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailAllergy.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Business operating without a licence</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadLicence.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailLicence.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Cleanliness, business practice or customer service</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadPractice.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailPractice.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Food auditor</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadAuditor.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailAuditor.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Food poisoning</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadPoisoning.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailPoisoning.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Food quality</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadQuality.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailQuality.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Foreign object in food</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadForeignObject.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailForeignObject.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Label or packaging</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadLabel.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailLabel.pdf" data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+              <tr>
+                <td>Other</td>
+                <td><a class="qg-btn btn-secondary" href="downloads/FoodComplaintExampleDownloadOther.pdf" data-access-new-window="true" target="_blank">PDF</a></td>
+                <td><a class="qg-btn btn-secondary" href="emails/FoodComplaintExampleEmailOther.pdf"  data-access-new-window="true" target="_blank">Email</a></td>
+              </tr>
+             </tbody>
+          </table>
+    
+          <br>
+          <br>
+        </div>
 
         <!-- Page buttons -->
-        <div class="form-group" id="NextButtons">
-          <a class="qg-btn btn-default" href="5-Retailer.html">Previous</a>&nbsp;
-          <a class="qg-btn btn-primary" href="7-Documents.html">Next</a>&nbsp;
-          <a href="1-Home.html">Cancel</a>
-          <br>
-          <br>
-      </div>
-         <!-- Page dates-->  
-         <div class="qg-content-footer">
+        <a class="qg-btn btn-default" href="9-Thankyou.html">Previous</a>&nbsp;
+    
+
+        <!-- Page dates-->  
+        <div class="qg-content-footer">
           <dl>
             <dt>Last updated:</dt>
             <dd>27 April 2020</dd>
             <dt>Last reviewed:</dt>
             <dd>27 April 2020</dd>
           </dl>
-      </div>
+        </div>
   </div>
     
 
@@ -389,10 +325,10 @@
             <li><a href="3-ComplaintType.html" aria-hidden="true"><span class="page-number">3</span>Complaint type</a></li>
             <li><a href="4-ComplaintDetails.html" aria-hidden="true"><span class="page-number">4</span>Complaint details</a></li>
             <li><a href="5-Retailer.html" aria-hidden="true"><span class="page-number">5</span>Business details</a></li>
-            <li><a href="6-Manufacturer.html" aria-hidden="true" class="active"><span class="page-number">6</span>Manufacturer details</a></li>
+            <li><a href="6-Manufacturer.html" aria-hidden="true"><span class="page-number">6</span>Manufacturer details</a></li>
             <li><a href="7-Documents.html" aria-hidden="true"><span class="page-number">7</span>Documents</a></li>
             <li><a href="8-AboutYou.html" aria-hidden="true"><span class="page-number">8</span>About you</a></li>
-           </ol>
+          </ol>
         </li>
       </ul>
     </nav>
